@@ -1,16 +1,16 @@
 stark:
   # global variables
-  cyan-color: "#00bfff"
+  cyan-color: "#00afcf"
   dark-cyan-color: "#027399"
-  dark-purple-color: "#ff8f33"
-  dark-red-color: "#b33e00"
+  dark-purple-color: "#051525"
+  dark-red-color: "#102535"
   orange-color: "#060070"
-  primary-font-family: "'Rajdhani', 'Roboto'"
-  red-color: "#b00900"
+  primary-font-family: "'Roboto'"
+  red-color: "#00afff"
   #primary-background: 'url()'
-  #background-image: "center / cover no-repeat fixed url('https://raw.githubusercontent.com/flejz/hass-cyberpunk-2077-theme/master/assets/background.jpg')"
+  background-image: "center / cover no-repeat fixed url('https://raw.githubusercontent.com/CashWilliams/ha-stark-theme/master/assets/background.jpg')"
 
-  # configs 
+  # configs
   accent-color: "var(--red-color)"
   app-header-background-color: "var(--dark-purple-color)"
   app-header-edit-background-color: "var(--dark-purple-color)"
@@ -44,7 +44,7 @@ stark:
   ha-card-border-radius: ""
   ha-card-header-font-size: ""
   hacs-error-color: "var(--red-color)"
-  hacs-warning-color: "var(--orange-color_"
+  hacs-warning-color: "var(--orange-color)"
   hacs-update-color: "var(--cyan-color)"
   hacs-new-color: "var(--cyan-color)"
   hacs--default-icon-color: "var(--red-color)"
@@ -511,7 +511,7 @@ stark:
   rgb-accent-color: "var(--red-color)"
   rgb-card-background-color: "var(--dark-purple-color)"
   rgb-primary-background-color: "var(--dark-purple-color)"
-  rgb-primary-color: "var(--red-color)"
+  rgb-primary-color: "var(--orange-color)"
   rgb-secondary-color: "var(--red-color)"
   rgb-text-primary-background-color: "var(--dark-purple-color)"
   scrollbar-thumb-color: ""
@@ -547,9 +547,13 @@ stark:
   state-climate-idle-color: ""
   state-climate-manual-color: ""
   state-climate-off-color: ""
+  state-switch-on-color: "var(--red-color)"
+  state-switch-active-color: "var(--red-color)"
+  state-switch-inactive-color: "var(--dark-purple-color)"
+  state-active-color: "var(--red-color)"
   state-color: "var(--red-color)"
   state-home-color: ""
-  state-icon-active-color: ""
+  state-icon-active-color: "var(--red-color)"
   state-icon-color: "var(--red-color)"
   state-icon-error-color: ""
   state-icon-unavailable-color: ""
@@ -594,7 +598,7 @@ stark:
         0% 100%
       );
     }
-    
+
     ha-card:before {
       border-radius: 1px;
       clip-path: polygon(
@@ -615,7 +619,17 @@ stark:
     }
 
     ha-card {
-      background-color: var(--red-color);
+      background-color: var(--red-color) !important;
+    }
+
+    ha-card.type-heading {
+      text-transform: uppercase;
+      padding-left: 10px;
+      padding-bottom: 10px;
+    }
+    
+    ha-card.type-heading div.content p {
+      font-weight: bold;
     }
 
     ha-card:hover {
