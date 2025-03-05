@@ -1,7 +1,7 @@
 ---
 
 yaml-files:
-  - "themes/cyberpunk-2077.yaml"
+  - "themes/stark.yaml"
 
 rules:
   braces:

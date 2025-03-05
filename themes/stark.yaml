@@ -1,14 +1,14 @@
-cyberpunk-2077:
+stark:
   # global variables
-  cyan-color: "#5EF6FF"
-  dark-cyan-color: "#1D4E51"
-  dark-purple-color: "#140C15"
-  dark-red-color: "#4A1D1F"
-  orange-color: "#FFA500"
+  cyan-color: "#00bfff"
+  dark-cyan-color: "#027399"
+  dark-purple-color: "#ff8f33"
+  dark-red-color: "#b33e00"
+  orange-color: "#060070"
   primary-font-family: "'Rajdhani', 'Roboto'"
-  red-color: "#F44638"
-  primary-background: 'url()'
-  background-image: "center / cover no-repeat fixed url('https://raw.githubusercontent.com/flejz/hass-cyberpunk-2077-theme/master/assets/background.jpg')"
+  red-color: "#b00900"
+  #primary-background: 'url()'
+  #background-image: "center / cover no-repeat fixed url('https://raw.githubusercontent.com/flejz/hass-cyberpunk-2077-theme/master/assets/background.jpg')"
 
   # configs 
   accent-color: "var(--red-color)"
@@ -575,7 +575,7 @@ cyberpunk-2077:
   warning-color: ""
 
   # card-mod
-  card-mod-theme: cyberpunk-2077
+  card-mod-theme: stark
 
   card-mod-root: |
     app-toolbar {
