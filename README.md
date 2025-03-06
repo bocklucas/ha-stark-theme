@@ -1,9 +1,12 @@
 # Stark Home Assistant Theme
 
 [![Build Status](https://github.com/CashWilliams/ha-stark-theme/workflows/.github/workflows/workflow.yml/badge.svg)](https://github.com/CashWilliams/ha-stark-theme/actions)
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
-> Stark theme by @CashWilliams (based on The Cyberpunk 2077 Theme by @flejz)
+> [!WARNING]
+> This theme is meant to be used on a wall display and hasn't been fully
+> tested or optimized to work in all screens of Home Assistant.
+
+Stark theme by @CashWilliams (based on The Cyberpunk 2077 Theme by @flejz)
 
 ## Installation
 

@@ -6,7 +6,7 @@ stark:
   dark-red-color: "#102535"
   orange-color: "#060070"
   primary-font-family: "'Roboto'"
-  red-color: "#00afff"
+  red-color: "#007fcf"
   #primary-background: 'url()'
   background-image: "center / cover no-repeat fixed url('https://raw.githubusercontent.com/CashWilliams/ha-stark-theme/master/assets/background.jpg')"
 
@@ -507,7 +507,7 @@ stark:
   paper-tab-ink: "var(--cyan-color)"
   primary-color: "var(--orange-color)"
   primary-background-color: "var(--dark-purple-color)"
-  primary-text-color: "var(--red-color)"
+  primary-text-color: "var(--cyan-color)"
   rgb-accent-color: "var(--red-color)"
   rgb-card-background-color: "var(--dark-purple-color)"
   rgb-primary-background-color: "var(--dark-purple-color)"
@@ -627,8 +627,9 @@ stark:
       padding-left: 10px;
       padding-bottom: 10px;
     }
-    
+
     ha-card.type-heading div.content p {
+      color: var(--secondary-text-color);  
       font-weight: bold;
     }
 
