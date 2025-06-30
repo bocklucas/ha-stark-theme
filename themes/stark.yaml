@@ -5,20 +5,20 @@ stark:
   dark-purple-color: "#051525"
   dark-red-color: "#102535"
   orange-color: "#060070"
-  primary-font-family: "'Roboto'"
+  primary-font-family: "'Orbitron', 'Rajdhani', 'Roboto', sans-serif"
   red-color: "#007fcf"
   #primary-background: 'url()'
   background-image: "center / cover no-repeat fixed url('https://raw.githubusercontent.com/CashWilliams/ha-stark-theme/master/assets/background.jpg')"
 
   # configs
-  accent-color: "var(--red-color)"
-  app-header-background-color: "var(--dark-purple-color)"
+  accent-color: "var(--stark-gold)"
+  app-header-background-color: "var(--stark-red)"
   app-header-edit-background-color: "var(--dark-purple-color)"
   app-header-edit-text-color: "var(--primary-text-color)"
-  app-header-text-color: "var(--red-color)"
-  app-header-selection-bar-color: "var(--cyan-color)"
+  app-header-text-color: "var(--stark-gold)"
+  app-header-selection-bar-color: "var(--arc-reactor-blue)"
   app-toolbar-font-size: ""
-  card-background-color: "var(--dark-purple-color)"
+  card-background-color: "var(--stark-grey)"
   chip-background-color: "var(--dark-purple-color)"
   dark-disabled-opacity: ""
   dark-divider-opacity: ""
@@ -29,7 +29,7 @@ stark:
   data-table-background-color: "var(--dark-purple-color)"
   disabled-color: "var(--dark-purple-color)"
   disabled-text-color: "var(--dark-purple-color)"
-  divider-color: "var(--dark-red-color)"
+  divider-color: "var(--stark-red)"
   energy-battery-in-color: ""
   energy-battery-out-color: ""
   energy-gas-color: ""
@@ -37,20 +37,20 @@ stark:
   energy-grid-return-color: ""
   energy-non-fossil-color: ""
   energy-solar-color: ""
-  error-color: ""
+  error-color: "var(--glow-red)"
   error-state-color: ""
-  ha-card-background: "var(--dark-red-color)"
+  ha-card-background: "var(--stark-grey)"
   ha-card-border-color: ""
   ha-card-border-radius: ""
   ha-card-header-font-size: ""
   hacs-error-color: "var(--red-color)"
-  hacs-warning-color: "var(--orange-color)"
+  hacs-warning-color: "var(--stark-gold)"
   hacs-update-color: "var(--cyan-color)"
   hacs-new-color: "var(--cyan-color)"
   hacs--default-icon-color: "var(--red-color)"
   header-height: ""
-  icon-color: "var(--red-color)"
-  info-color: ""
+  icon-color: "var(--arc-reactor-blue)"
+  info-color: "var(--arc-reactor-blue)"
   input-disabled-fill-color: ""
   input-disabled-ink-color: ""
   input-disabled-line-color: ""
@@ -63,12 +63,12 @@ stark:
   input-outlined-disabled-border-color: ""
   input-outlined-hover-border-color: ""
   input-outlined-idle-border-color: ""
-  label-badge-background-color: "var(--dark-purple-color)"
+  label-badge-background-color: "var(--stark-red)"
   label-badge-blue: ""
   label-badge-green: ""
   label-badge-grey: ""
   label-badge-red: ""
-  label-badge-color: "var(--red-color)"
+  label-badge-color: "var(--stark-gold)"
   label-badge-yellow: ""
   layout_-_display: ""
   layout-around-aligned_-_align-content: ""
@@ -505,9 +505,9 @@ stark:
   paper-slider-pin-start-color: "var(--cyan-color)"
   paper-slider-secondary-color: "var(--red-color)"
   paper-tab-ink: "var(--cyan-color)"
-  primary-color: "var(--orange-color)"
-  primary-background-color: "var(--dark-purple-color)"
-  primary-text-color: "var(--cyan-color)"
+  primary-color: "var(--arc-reactor-blue)"
+  primary-background-color: "var(--stark-dark)"
+  primary-text-color: "var(--stark-white)"
   rgb-accent-color: "var(--red-color)"
   rgb-card-background-color: "var(--dark-purple-color)"
   rgb-primary-background-color: "var(--dark-purple-color)"
@@ -515,9 +515,9 @@ stark:
   rgb-secondary-color: "var(--red-color)"
   rgb-text-primary-background-color: "var(--dark-purple-color)"
   scrollbar-thumb-color: ""
-  secondary-background-color: "var(--dark-purple-color)"
-  secondary-color: "var(--cyan-color)"
-  secondary-text-color: "var(--cyan-color)"
+  secondary-background-color: "var(--stark-grey)"
+  secondary-color: "var(--arc-reactor-blue)"
+  secondary-text-color: "var(--arc-reactor-blue)"
   shadow-elevation-12dp_-_box-shadow: ""
   shadow-elevation-16dp_-_box-shadow: ""
   shadow-elevation-24dp_-_box-shadow: ""
@@ -528,12 +528,12 @@ stark:
   shadow-elevation-8dp_-_box-shadow: ""
   shadow-none_-_box-shadow: ""
   shadow-transition_-_transition: ""
-  sidebar-background-color: "var(--dark-purple-color)"
-  sidebar-icon-color: "var(--red-color)"
-  sidebar-selected-background-color: "var(--dark-red)"
-  sidebar-selected-icon-color: "var(--cyan-color)"
-  sidebar-selected-color: "var(--cyan-color)"
-  sidebar-selected-text-color: "var(--cyan-color)"
+  sidebar-background-color: "var(--stark-dark)"
+  sidebar-icon-color: "var(--stark-gold)"
+  sidebar-selected-background-color: "var(--stark-red)"
+  sidebar-selected-icon-color: "var(--arc-reactor-blue)"
+  sidebar-selected-color: "var(--arc-reactor-blue)"
+  sidebar-selected-text-color: "var(--arc-reactor-blue)"
   sidebar-color: "var(--red-color)"
   slider-color: "var(--red-color)"
   slider-secondary-color: "var(--red-color)"
@@ -563,7 +563,7 @@ stark:
   state-on-color: ""
   state-unavailable-color: ""
   state-unknown-color: ""
-  success-color: ""
+  success-color: "#00ffae"
   switch-checked-button-color: "var(--cyan-color)"
   switch-checked-color: "var(--cyan-color)"
   switch-checked-track-color: "var(--cyan-color)"
@@ -576,244 +576,108 @@ stark:
   text-light-primary-background-color: "var(--dark-purple-color)"
   text-primary-color: "var(--dark-purple-color)"
   text-primary-background-color: "var(--dark-red-color)"
-  warning-color: ""
+  warning-color: "var(--stark-gold)"
 
   # card-mod
   card-mod-theme: stark
 
   card-mod-root: |
     app-toolbar {
+      font-family: var(--primary-font-family);
+      background: linear-gradient(90deg, var(--stark-red) 0%, var(--stark-gold) 100%);
+      box-shadow: 0 0 20px var(--arc-reactor-blue), 0 2px 8px var(--stark-red);
     }
 
   card-mod-card: |
     ha-card {
-      border-radius: 1px;
-      clip-path: polygon(
-        0% 0%, 
-        40px 0%, 
-        45px 4px, 
-        100% 4px, 
-        100% calc(100% - 20px), 
-        calc(100% - 20px) 100%,
-        0% 100%
-      );
+      border-radius: 8px;
+      border: 2px solid var(--arc-reactor-blue);
+      box-shadow: 0 0 16px 2px var(--arc-reactor-blue), 0 2px 8px var(--stark-red);
+      background: linear-gradient(135deg, var(--stark-grey) 80%, var(--stark-dark) 100%);
+      font-family: var(--primary-font-family);
+      color: var(--stark-white);
+      position: relative;
+      overflow: hidden;
     }
 
     ha-card:before {
-      border-radius: 1px;
-      clip-path: polygon(
-        0% 0%, 
-        40px 0%, 
-        45px 4px, 
-        100% 4px, 
-        100% calc(100% - 23px), 
-        calc(100% - 23px) 100%,
-        0% 100%
-      );
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      box-shadow: 0 0 32px 4px var(--arc-reactor-blue);
+      opacity: 0.15;
+      pointer-events: none;
     }
 
-    ha-card,
-    ha-card:before,
-    ha-card:after {
-      transition: all 100ms ease-out; 
-    }
-
-    ha-card {
-      background-color: var(--red-color) !important;
+    ha-card:hover {
+      border-color: var(--stark-gold);
+      box-shadow: 0 0 32px 8px var(--arc-reactor-blue), 0 2px 8px var(--stark-gold);
+      transition: box-shadow 0.2s, border-color 0.2s;
     }
 
     ha-card.type-heading {
       text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--stark-gold);
+      font-family: var(--primary-font-family);
+      font-weight: bold;
+      font-size: 1.2em;
       padding-left: 10px;
       padding-bottom: 10px;
     }
 
     ha-card.type-heading div.content p {
-      color: var(--secondary-text-color);  
+      color: var(--arc-reactor-blue);
       font-weight: bold;
-    }
-
-    ha-card:hover {
-      clip-path: polygon(
-        0px 0px, 
-        100% 0px, 
-        100% calc(100% - 20px), 
-        calc(100% - 20px) 100%, 
-        0px 100%
-      );
-    }
-
-    ha-card:hover,
-    ha-card:hover:after {
-      background-color: var(--cyan-color);
     }
 
     ha-card > * {
       z-index: 2;
     }
 
-    ha-card:before {
-      background: var(--dark-red-color);
-      content: '';
-      display: block;
-      height: calc(100% - 3px);
-      left: 1px;
-      position: absolute;
-      top: 2px;
-      width: calc(100% - 2px);
-      z-index: -1;
-    }
-
-    ha-card:after {
-      background: var(--red-color);
-      bottom: 0px;
-      clip-path: polygon(100% 0%, 100% 2px, 2px 100%, 0% 100%);
-      color: var(--red-color); 
-      content: '';
-      display: block;
-      height: 20px;
-      position: absolute;
-      right: 0px;
-      width: 20px;
-    }
-
   card-mod-sidebar: |
-    @-webkit-keyframes blink {
-      0% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.5;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-
     .menu .title {
-      color: var(--cyan-color);
+      color: var(--arc-reactor-blue);
       font-family: var(--primary-font-family);
       font-weight: bold;
       margin-top: 4px;
-      text-shadow: 0 0 0 transparent, 
-                   0 0 10px var(--cyan-color), 
-                   0 0 20px var(--cyan-color);
+      text-shadow: 0 0 10px var(--arc-reactor-blue), 0 0 20px var(--arc-reactor-blue);
       text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
     .menu ha-icon-button {
-      color: var(--cyan-color) !important;
-    }
-
-    paper-icon-item span,
-    paper-icon-item:hover span {
-      text-transform: uppercase;
-      z-index: 1;
-    }
-
-    paper-icon-item:hover span,
-    paper-icon-item:hover ha-icon,
-    paper-icon-item:hover ha-svg-icon,
-    a[aria-selected=true] paper-icon-item span,
-    a[aria-selected=true] paper-icon-item ha-icon,
-    a[aria-selected=true] paper-icon-item ha-svg-icon {
-      color: var(--cyan-color);
-      font-weight: bold;
-      text-shadow: 0 0 0 transparent, 
-                   0 0 10px var(--cyan-color);
-    }
-
-    paper-icon-item:hover ha-icon,
-    paper-icon-item:hover ha-svg-icon,
-    a[aria-selected=true] paper-icon-item ha-icon,
-    a[aria-selected=true] paper-icon-item ha-svg-icon {
-      animation: blink 250ms infinite alternate
+      color: var(--stark-gold) !important;
+      filter: drop-shadow(0 0 6px var(--arc-reactor-blue));
     }
 
     paper-icon-item {
-      background-color: var(--red-color);
-      border-radius: 1px !important;
-      clip-path: polygon(
-        0px calc(100% - 7px),
-        1px calc(100% - 9px),
-        1px calc(100% - 20px),
-        0px calc(100% - 22px),
-        0px 0px,
-        100% 0px, 
-        100% calc(100% - 10px), 
-        calc(100% - 10px) 100%, 
-        0px 100%
-      );
+      background-color: var(--stark-red);
+      border-radius: 6px !important;
+      border: 1.5px solid var(--arc-reactor-blue);
+      box-shadow: 0 0 8px var(--arc-reactor-blue);
+      color: var(--stark-gold);
+      font-family: var(--primary-font-family);
+      transition: box-shadow 0.2s, border-color 0.2s, color 0.2s;
     }
 
-    paper-icon-item:before {
-      background: var(--dark-red-color);
-      clip-path: polygon(
-        5px 0px,
-        100% 0px, 
-        100% calc(100% - 10px), 
-        calc(100% - 10px) 100%, 
-        5px 100%
-      );
-      content: '';
-      display: block;
-      height: calc(100% - 2px);
-      left: 1px;
-      position: absolute;
-      top: 1px;
-      width: calc(100% - 2px);
-      z-index: -1;
+    paper-icon-item:hover, a[aria-selected=true] paper-icon-item {
+      background-color: var(--arc-reactor-blue);
+      color: var(--stark-dark);
+      border-color: var(--stark-gold);
+      box-shadow: 0 0 16px var(--arc-reactor-blue), 0 0 8px var(--stark-gold);
     }
 
-    paper-icon-item,
-    paper-icon-item:before {
-      transition: background-color 100ms ease-out, color 100ms ease-out; 
-    }
-
-    paper-icon-item:after {
-      background-color: var(--red-color);
-      content: '';
-      display: block;
-      height: 100%;
-      left: 5px;
-      position: absolute;
-      top: 0px;
-      width: 1px;
-    }
-
-    paper-icon-item:hover,
-    paper-icon-item:hover:after,
-    a[aria-selected=true] paper-icon-item,
-    a[aria-selected=true] paper-icon-item:after {
-      color: var(--cyan-color); 
-      background-color: var(--cyan-color); 
-    }
-
-    paper-icon-item:hover:before {
-      background-color: var(--dark-red-color);
-    }
-
-    .iron-selected paper-icon-item:focus::before,
-    paper-icon-item:focus:before,
-    paper-icon-item:focus:before,
-    a[aria-selected=true] paper-icon-item:before {
-      background-color: var(--dark-cyan-color); 
-    }
-
-    .iron-selected paper-icon-item:focus::before,
-    paper-icon-item:hover:before,
-    paper-icon-item:focus:before,
-    a[aria-selected=true] paper-icon-item:before {
-      border-radius: 1px;
-      position: absolute;
-      inset: 1px 1px;
-      pointer-events: none;
-      content: "";
-      will-change: auto;
-      opacity: 1 !important;
+    paper-icon-item span {
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
     div.tooltip {
-      color: var(--dark-purple-color);
-      background-color: var(--cyan-color);
+      color: var(--stark-dark);
+      background-color: var(--arc-reactor-blue);
+      border: 1px solid var(--stark-gold);
+      box-shadow: 0 0 8px var(--arc-reactor-blue);
     }
