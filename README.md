@@ -25,6 +25,15 @@
 - **Enhanced Glow Effects** - Multi-layered glow and shadow effects
 - **Smooth Animations** - Cubic-bezier transitions for a premium feel
 
+### ⚡ JARVIS-Style Iconography
+- **Navigation Icons** - Gold-glowing header icons with enhanced readability on dark background
+- **Sidebar Targeting** - Active menu items get animated targeting brackets with pulse effect
+- **State-Aware Icons** - Smart coloring: lights=gold, power=blue, alerts=orange, errors=red
+- **HUD Glow Effects** - All icons have contextual drop-shadow glows matching their function
+- **Interactive Feedback** - Hover animations with subtle scale transforms and color shifts
+- **Notification Pulse** - Alert icons have gentle pulsing animations for attention
+- **Enhanced Switches** - Arc reactor styled toggles with appropriate glow effects
+
 ### 💎 Enhanced Components
 - **Gradient Backgrounds** - Multi-layer gradients with transparency effects
 - **Enhanced Typography** - Technical font stack with improved spacing
@@ -144,6 +153,8 @@ stark:
 
 ## 🚀 Future Enhancements
 
+- [x] **JARVIS-Style Iconography** - ✅ COMPLETED: Enhanced icon styling with glow effects and animations
+- [x] **Enhanced Navigation Readability** - ✅ COMPLETED: Improved navigation bar with better contrast
 - [ ] Additional suit Mark variations (Mark 42, Mark 50, etc.)
 - [ ] FRIDAY voice assistant integration styling
 - [ ] Holographic projection effects
