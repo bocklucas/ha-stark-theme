@@ -48,8 +48,27 @@ stark:
   # All available via Google Fonts with fallbacks to system fonts
   primary-font-family: "'Orbitron', 'Exo 2', 'Rajdhani', 'Eurostile Extended', 'Bank Gothic', 'Microgramma', 'Helvetica Neue', 'Arial', sans-serif"
   
-  # Background with enhanced Iron Man aesthetic
-  background-image: "center / cover no-repeat fixed url('https://raw.githubusercontent.com/CashWilliams/ha-stark-theme/master/assets/background.jpg')"
+  # Enhanced Iron Man HUD Background - Choose your preference:
+  
+  # Option 1: Custom Arc Reactor CSS Effect (RECOMMENDED) - Always works, lightweight
+  background-image: "radial-gradient(circle at center, rgba(103, 199, 235, 0.08) 0%, rgba(103, 199, 235, 0.03) 25%, rgba(10, 14, 26, 0.95) 65%, rgba(5, 17, 33, 1) 100%), linear-gradient(135deg, rgba(103, 199, 235, 0.02) 0%, transparent 40%, rgba(251, 202, 3, 0.01) 100%)"
+  
+  # Alternative Iron Man backgrounds (uncomment to use):
+  
+  # Option 2: Your Own Custom Background
+  # Upload your image to /config/www/images/ and use:
+  # background-image: "center / cover no-repeat fixed url('/local/images/your-iron-man-background.jpg')"
+  
+  # Option 3: Minimal Dark Gradient (Clean, professional)
+  # background-image: "linear-gradient(135deg, rgba(10, 14, 26, 1) 0%, rgba(5, 17, 33, 1) 100%)"
+  
+  # Option 4: Arc Reactor Glow CSS (Stronger effect)
+  # background-image: "radial-gradient(circle at center, rgba(103, 199, 235, 0.15) 0%, rgba(103, 199, 235, 0.08) 20%, rgba(10, 14, 26, 0.9) 50%, rgba(5, 17, 33, 1) 100%)"
+  
+  # For image backgrounds, try these sources:
+  # - WallpaperCave: https://wallpapercave.com/iron-man-wallpapers
+  # - DeviantArt: Search "Iron Man Arc Reactor" or "Iron Man Blueprint"
+  # - Google Images: Search "Iron Man 4K wallpaper dark" with usage rights filter
 
   # configs
   accent-color: "var(--stark-gold)"

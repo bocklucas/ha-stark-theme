@@ -68,6 +68,41 @@ git clone https://github.com/CashWilliams/ha-stark-theme.git
 2. Select "Iron Man MCU HUD Theme" from the theme dropdown
 3. Enjoy your new Stark Industries interface!
 
+## 🖼️ Background Customization
+
+The theme includes multiple background options to suit your preference:
+
+### **Option 1: Custom Arc Reactor Effect (Default)**
+A CSS-generated arc reactor glow effect that's lightweight and perfectly matched to the theme.
+
+### **Option 2-7: High-Quality Iron Man Backgrounds**
+Several pre-configured high-quality Iron Man backgrounds are available. To use one:
+
+1. Open `themes/stark.yaml`
+2. Comment out the current background line by adding `#` at the beginning
+3. Uncomment your preferred option by removing the `#`
+
+### **Using Your Own Background**
+To use your own Iron Man background image:
+
+1. **Upload your image** to `/config/www/images/` (create the folder if it doesn't exist)
+2. **Edit the theme** by changing the background line to:
+   ```yaml
+   background-image: "center / cover no-repeat fixed url('/local/images/your-image-name.jpg')"
+   ```
+
+### **Recommended Background Sources**
+- **WallpaperCave** - High-quality Iron Man wallpapers
+- **DeviantArt** - Arc reactor blueprints and technical designs
+- **Unsplash** - Professional tech and industrial photos
+- **Marvel Official** - Official movie stills and promotional images
+
+### **Background Tips**
+- Use **dark backgrounds** for best contrast with the HUD elements
+- **4K resolution** (3840x2160) works best for large displays
+- **Arc reactor themes** complement the blue color scheme perfectly
+- **Workshop/lab settings** create an immersive Stark Industries feel
+
 ## 🛠️ Technical Details
 
 ### Color Variables
