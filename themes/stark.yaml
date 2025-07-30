@@ -43,19 +43,21 @@ stark:
   orange-color: "var(--targeting-orange)"
   red-color: "var(--alert-red)"
   
-  # Font family - keeping the tech aesthetic
-  primary-font-family: "'Orbitron', 'Rajdhani', 'Roboto Mono', monospace"
+  # Iron Man HUD Font Stack - Authentic MCU-inspired typography
+  # Using Orbitron (geometric futuristic), Exo (tech-oriented), Rajdhani (HUD-style)
+  # All available via Google Fonts with fallbacks to system fonts
+  primary-font-family: "'Orbitron', 'Exo 2', 'Rajdhani', 'Eurostile Extended', 'Bank Gothic', 'Microgramma', 'Helvetica Neue', 'Arial', sans-serif"
   
   # Background with enhanced Iron Man aesthetic
   background-image: "center / cover no-repeat fixed url('https://raw.githubusercontent.com/CashWilliams/ha-stark-theme/master/assets/background.jpg')"
 
   # configs
   accent-color: "var(--stark-gold)"
-  app-header-background-color: "var(--alert-red)"
+  app-header-background-color: "var(--arc-reactor-blue)"
   app-header-edit-background-color: "var(--stark-dark)"
   app-header-edit-text-color: "var(--stark-white)"
   app-header-text-color: "var(--stark-gold)"
-  app-header-selection-bar-color: "var(--arc-reactor-blue)"
+  app-header-selection-bar-color: "var(--cyan-color)"
   app-toolbar-font-size: ""
   card-background-color: "var(--panel-dark)"
   chip-background-color: "var(--stark-dark)"
@@ -621,15 +623,18 @@ stark:
   card-mod-theme: stark
 
   card-mod-root: |
+    /* Import Iron Man HUD fonts from Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@100;200;300;400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+    
     app-toolbar {
       font-family: var(--primary-font-family);
-      background: linear-gradient(135deg, var(--alert-red) 0%, var(--targeting-orange) 50%, var(--stark-gold) 100%);
+      background: linear-gradient(135deg, var(--arc-reactor-blue) 0%, var(--deep-arc-blue) 50%, var(--hud-primary-blue) 100%);
       box-shadow: 
         0 0 30px 8px var(--glow-blue), 
-        0 4px 16px var(--alert-red),
-        inset 0 1px 0 rgba(251, 202, 3, 0.3);
-      text-shadow: 0 0 10px var(--glow-gold);
-      border-bottom: 2px solid var(--arc-reactor-blue);
+        0 4px 16px var(--arc-reactor-blue),
+        inset 0 1px 0 rgba(103, 199, 235, 0.4);
+      text-shadow: 0 0 10px var(--glow-blue);
+      border-bottom: 2px solid var(--stark-gold);
     }
     
     /* Add subtle HUD grid overlay */
