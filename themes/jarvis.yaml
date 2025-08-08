@@ -214,8 +214,47 @@ jarvis:
         linear-gradient(rgba(103, 199, 235, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(103, 199, 235, 0.03) 1px, transparent 1px);
       background-size: 20px 20px;
+      background-position: 0 0, 0 0;
       pointer-events: none;
       z-index: -1;
+      animation: hud-grid-drift 28s linear infinite alternate;
+    }
+
+    @keyframes hud-grid-drift {
+      0%   { background-position: 0 0, 0 0; }
+      100% { background-position: 20px 0, 0 20px; }
+    }
+
+    /* Gentle rotating conic glow reminiscent of JARVIS */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 140vmax;
+      height: 140vmax;
+      transform: translate(-50%, -50%) rotate(0deg);
+      background: conic-gradient(from 0deg,
+        rgba(79, 195, 247, 0.06) 0deg 20deg,
+        transparent 20deg 40deg,
+        rgba(103, 199, 235, 0.05) 40deg 60deg,
+        transparent 60deg 120deg,
+        rgba(103, 199, 235, 0.04) 120deg 140deg,
+        transparent 140deg 360deg);
+      filter: blur(20px);
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      z-index: -2;
+      animation: reactor-rotate 240s linear infinite;
+      will-change: transform;
+    }
+
+    @keyframes reactor-rotate {
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body::before, body::after { animation: none !important; }
     }
 
   card-mod-card: |
