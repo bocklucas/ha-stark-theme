@@ -1,0 +1,588 @@
+jarvis:
+  # JARVIS Blue-Spectrum HUD Color Variables
+  # Primary Blues
+  arc-reactor-blue: "#67C7EB"
+  hud-primary-blue: "#4FC3F7"
+  deep-arc-blue: "#2196F3"
+
+  # Supporting Blues / Cyans
+  cyan-color: "#00E5FF"
+  light-hud-blue: "#B3E5FC"
+  ice-accent-blue: "#8BE9FF"
+  neon-blue: "#00B0FF"
+  deep-neon-blue: "#0091EA"
+  cobalt-blue: "#0081CB"
+
+  # Background Colors - Deep tech aesthetic
+  stark-dark: "#0A0E1A"
+  hud-dark: "#0D1421"
+  deep-space: "#051121"
+  panel-dark: "#1A2332"
+
+  # Navigation specific colors
+  nav-dark: "#0F1419"
+  nav-blue: "#1E3A5F"
+
+  # Metallic/Neutral
+  stark-grey: "#263238"
+  metal-grey: "#37474F"
+  suit-silver: "#90A4AE"
+  stark-white: "#E8EAF6"
+
+  # Glow Effects (all blue-spectrum)
+  glow-blue: "#00E5FF"
+  glow-cyan: "#6EE6FF"
+  glow-ice: "#8BE9FF"
+
+  # Maintain legacy variable names but map to blue-spectrum
+  # (to preserve references in CSS below)
+  stark-gold: "var(--ice-accent-blue)"        # accent becomes ice blue
+  targeting-orange: "var(--neon-blue)"        # targeting becomes electric cyan
+  warning-amber: "#29B6F6"                    # soft informational blue
+  alert-red: "var(--neon-blue)"               # alerts become neon blue
+  critical-red: "var(--deep-neon-blue)"       # critical becomes deep neon blue
+  danger-red: "var(--cobalt-blue)"            # danger becomes cobalt blue
+  glow-gold: "var(--glow-cyan)"               # gold glow replaced by cyan glow
+  glow-red: "var(--glow-blue)"                # red glow replaced by blue glow
+
+  # Typography
+  primary-font-family: "'Orbitron', 'Exo 2', 'Rajdhani', 'Eurostile Extended', 'Bank Gothic', 'Microgramma', 'Helvetica Neue', 'Arial', sans-serif"
+
+  # Background - Arc Reactor blue-only gradient (no warm hues)
+  background-image: "radial-gradient(circle at center, rgba(103, 199, 235, 0.08) 0%, rgba(103, 199, 235, 0.03) 25%, rgba(10, 14, 26, 0.95) 65%, rgba(5, 17, 33, 1) 100%), linear-gradient(135deg, rgba(103, 199, 235, 0.02) 0%, transparent 40%, rgba(33, 150, 243, 0.03) 100%)"
+  lovelace-background: "var(--background-image)"
+
+  # configs - Blue-spectrum defaults
+  accent-color: "var(--stark-gold)"
+  app-header-background-color: "var(--nav-dark)"
+  app-header-edit-background-color: "var(--stark-dark)"
+  app-header-edit-text-color: "var(--stark-white)"
+  app-header-text-color: "var(--stark-gold)"
+  app-header-selection-bar-color: "var(--cyan-color)"
+  card-background-color: "var(--panel-dark)"
+  chip-background-color: "var(--stark-dark)"
+  dark-primary-background-color: "var(--stark-dark)"
+  data-table-background-color: "var(--panel-dark)"
+  disabled-color: "var(--metal-grey)"
+  disabled-text-color: "var(--metal-grey)"
+  divider-color: "var(--arc-reactor-blue)"
+  error-color: "var(--danger-red)"
+  ha-card-background: "var(--panel-dark)"
+  icon-color: "var(--arc-reactor-blue)"
+  info-color: "var(--hud-primary-blue)"
+  input-dropdown-icon-color: "var(--stark-gold)"
+  label-badge-background-color: "var(--deep-arc-blue)"
+  label-badge-color: "var(--stark-gold)"
+  light-theme-background-color: "var(--stark-dark)"
+  light-theme-disabled-color: "var(--cyan-color)"
+  light-theme-secondary-background-color: "var(--panel-dark)"
+  light-theme-secondary-color: "var(--hud-primary-blue)"
+  light-theme-color: "var(--arc-reactor-blue)"
+  material-background-color: "var(--stark-dark)"
+  material-body-color: "var(--arc-reactor-blue)"
+  material-disabled-color: "var(--metal-grey)"
+  material-primary-background-color: "var(--stark-dark)"
+  material-primary-color: "var(--arc-reactor-blue)"
+  material-secondary-background-color: "var(--panel-dark)"
+  material-secondary-color: "var(--hud-primary-blue)"
+  mdc-button-raised-box-shadow-hover: "0 0 15px 5px var(--glow-blue)"
+  mdc-checkbox-unchecked-color: "var(--arc-reactor-blue)"
+  mdc-ripple-color: "var(--arc-reactor-blue)"
+  mdc-select-disabled-dropdown-icon-color: "var(--metal-grey)"
+  mdc-select-disabled-fill-color: "var(--stark-dark)"
+  mdc-select-disabled-ink-color: "var(--metal-grey)"
+  mdc-select-dropdown-icon-color: "var(--stark-gold)"
+  mdc-select-fill-color: "var(--panel-dark)"
+  mdc-select-ink-color: "var(--arc-reactor-blue)"
+  mdc-select-label-ink-color: "var(--hud-primary-blue)"
+  mdc-text-field-fill-color: "var(--panel-dark)"
+  mdc-text-field-ink-color: "var(--arc-reactor-blue)"
+  mdc-text-field-label-ink-color: "var(--hud-primary-blue)"
+  mdc-theme-on-primary: "var(--stark-dark)"
+  mdc-theme-on-secondary: "var(--stark-dark)"
+  mdc-theme-on-surface: "var(--cyan-color)"
+  mdc-theme-primary: "var(--arc-reactor-blue)"
+  mdc-theme-secondary: "var(--hud-primary-blue)"
+  mdc-theme-surface: "var(--panel-dark)"
+  mdc-theme-background: "var(--stark-dark)"
+  mdc-theme-text-primary-on-background: "var(--arc-reactor-blue)"
+  mush-rgb-state-entity: "var(--arc-reactor-blue)"
+  paper-font-body1_-_font-family: "var(--primary-font-family)"
+  paper-font-body2_-_font-family: "var(--primary-font-family)"
+  paper-font-button_-_font-family: "var(--primary-font-family)"
+  paper-font-caption_-_font-family: "var(--primary-font-family)"
+  paper-font-code1_-_font-family: "var(--primary-font-family)"
+  paper-font-code2_-_font-family: "var(--primary-font-family)"
+  paper-font-common-base_-_font-family: "var(--primary-font-family)"
+  paper-font-common-code_-_font-family: "var(--primary-font-family)"
+  paper-font-display1_-_font-family: "var(--primary-font-family)"
+  paper-font-display2_-_font-family: "var(--primary-font-family)"
+  paper-font-display3_-_font-family: "var(--primary-font-family)"
+  paper-font-display4_-_font-family: "var(--primary-font-family)"
+  paper-font-headline_-_font-family: "var(--primary-font-family)"
+  paper-font-menu_-_font-family: "var(--primary-font-family)"
+  paper-font-subhead_-_font-family: "var(--primary-font-family)"
+  paper-font-title_-_font-family: "var(--primary-font-family)"
+  paper-input-container-color: "var(--arc-reactor-blue)"
+  paper-input-container-input-color: "var(--stark-white)"
+  paper-input-container-focus-color: "var(--glow-blue)"
+  paper-input-container-shared-input-style_-_color: "var(--stark-white)"
+  paper-input-container-shared-input-style_-_font-family: "var(--primary-font-family)"
+  paper-item-icon-active-color: "var(--stark-gold)"
+  paper-item-icon-color: "var(--arc-reactor-blue)"
+  paper-item-selected: "var(--glow-blue)"
+  paper-listbox-background-color: "var(--panel-dark)"
+  paper-slider-active-color: "var(--arc-reactor-blue)"
+  paper-slider-container-color: "var(--stark-dark)"
+  paper-slider-knob-color: "var(--stark-gold)"
+  paper-slider-knob-start-color: "var(--arc-reactor-blue)"
+  paper-slider-pin-color: "var(--neon-blue)"
+  paper-slider-pin-start-color: "var(--glow-blue)"
+  paper-slider-secondary-color: "var(--hud-primary-blue)"
+  paper-tab-ink: "var(--glow-blue)"
+  primary-color: "var(--arc-reactor-blue)"
+  primary-background-color: "var(--stark-dark)"
+  primary-text-color: "var(--stark-white)"
+  rgb-accent-color: "var(--stark-gold)"
+  rgb-card-background-color: "var(--panel-dark)"
+  rgb-primary-background-color: "var(--stark-dark)"
+  rgb-primary-color: "var(--arc-reactor-blue)"
+  rgb-secondary-color: "var(--arc-reactor-blue)"
+  rgb-text-primary-background-color: "var(--stark-dark)"
+  secondary-background-color: "var(--panel-dark)"
+  secondary-color: "var(--arc-reactor-blue)"
+  secondary-text-color: "var(--hud-primary-blue)"
+  sidebar-background-color: "var(--stark-dark)"
+  sidebar-icon-color: "var(--stark-gold)"
+  sidebar-selected-background-color: "rgba(79, 195, 247, 0.15)"
+  sidebar-selected-icon-color: "var(--glow-blue)"
+  sidebar-selected-color: "var(--arc-reactor-blue)"
+  sidebar-selected-text-color: "var(--stark-white)"
+  sidebar-color: "var(--hud-primary-blue)"
+  slider-color: "var(--arc-reactor-blue)"
+  slider-secondary-color: "var(--stark-gold)"
+  slider-track-color: "var(--stark-dark)"
+  state-switch-on-color: "var(--glow-blue)"
+  state-switch-active-color: "var(--arc-reactor-blue)"
+  state-switch-inactive-color: "var(--metal-grey)"
+  state-active-color: "var(--arc-reactor-blue)"
+  state-color: "var(--hud-primary-blue)"
+  state-icon-active-color: "var(--stark-gold)"
+  state-icon-color: "var(--arc-reactor-blue)"
+  success-color: "#00E5FF"
+  switch-checked-button-color: "var(--stark-gold)"
+  switch-checked-color: "var(--glow-blue)"
+  switch-checked-track-color: "var(--arc-reactor-blue)"
+  switch-unchecked-button-color: "var(--metal-grey)"
+  switch-unchecked-color: "var(--stark-dark)"
+  switch-unchecked-track-color: "var(--panel-dark)"
+  table-row-alternative-background-color: "var(--panel-dark)"
+  table-row-background-color: "var(--stark-dark)"
+  text-accent-color: "var(--stark-gold)"
+  text-light-primary-background-color: "var(--stark-dark)"
+  text-primary-color: "var(--stark-white)"
+  text-primary-background-color: "var(--panel-dark)"
+  warning-color: "var(--warning-amber)"
+
+  # card-mod
+  card-mod-theme: jarvis
+
+  card-mod-root: |
+    /* Import JARVIS HUD fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@100;200;300;400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+    app-toolbar {
+      font-family: var(--primary-font-family);
+      background: linear-gradient(135deg, var(--nav-dark) 0%, var(--hud-dark) 50%, var(--stark-dark) 100%);
+      box-shadow:
+        0 0 15px 3px rgba(103, 199, 235, 0.4),
+        0 2px 6px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(103, 199, 235, 0.15);
+      text-shadow: 0 0 6px var(--glow-blue);
+      border-bottom: 1px solid var(--arc-reactor-blue);
+    }
+
+    /* Subtle HUD grid overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        linear-gradient(rgba(103, 199, 235, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(103, 199, 235, 0.03) 1px, transparent 1px);
+      background-size: 20px 20px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+  card-mod-card: |
+    ha-card {
+      border-radius: 12px;
+      border: 2px solid var(--arc-reactor-blue);
+      box-shadow:
+        0 0 25px 4px var(--glow-blue),
+        0 4px 12px var(--critical-red),
+        inset 0 1px 0 rgba(103, 199, 235, 0.2);
+      background: linear-gradient(135deg,
+        rgba(26, 35, 50, 0.95) 0%,
+        rgba(13, 20, 33, 0.98) 50%,
+        rgba(10, 14, 26, 1) 100%);
+      font-family: var(--primary-font-family);
+      color: var(--stark-white);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Arc reactor-style corner indicators */
+    ha-card::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--arc-reactor-blue) 0%, transparent 70%);
+      box-shadow: 0 0 12px var(--glow-blue);
+      animation: pulse-arc 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-arc {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* HUD scan line effect */
+    ha-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        var(--glow-blue) 50%,
+        transparent 100%);
+      animation: scan-line 3s linear infinite;
+    }
+
+    @keyframes scan-line {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    ha-card:hover {
+      border-color: var(--stark-gold);
+      box-shadow:
+        0 0 40px 8px var(--glow-blue),
+        0 4px 16px var(--stark-gold),
+        inset 0 1px 0 rgba(103, 199, 235, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(-2px);
+    }
+
+    /* Headings */
+    ha-card.type-heading {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--cyan-color);
+      font-family: var(--primary-font-family);
+      font-weight: 700;
+      font-size: 1.3em;
+      padding: 16px;
+      text-shadow:
+        0 0 10px var(--glow-blue),
+        0 0 20px var(--glow-blue),
+        0 0 30px var(--glow-blue);
+      background: linear-gradient(135deg,
+        rgba(103, 199, 235, 0.1) 0%,
+        transparent 100%);
+    }
+
+    ha-card.type-heading div.content p {
+      color: var(--arc-reactor-blue);
+      font-weight: 600;
+      text-shadow: 0 0 8px var(--glow-blue);
+    }
+
+    ha-card > * {
+      z-index: 2;
+    }
+
+  card-mod-sidebar: |
+    /* Sidebar title */
+    .menu .title {
+      color: var(--arc-reactor-blue);
+      font-family: var(--primary-font-family);
+      font-weight: 700;
+      font-size: 1.1em;
+      margin-top: 8px;
+      text-shadow:
+        0 0 10px var(--glow-blue),
+        0 0 20px var(--glow-blue),
+        0 0 30px var(--glow-blue);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      animation: glow-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes glow-pulse {
+      0%, 100% { text-shadow: 0 0 10px var(--glow-blue), 0 0 20px var(--glow-blue); }
+      50% { text-shadow: 0 0 15px var(--glow-blue), 0 0 30px var(--glow-blue), 0 0 40px var(--glow-blue); }
+    }
+
+    .menu ha-icon-button {
+      color: var(--stark-gold) !important;
+      filter: drop-shadow(0 0 8px var(--glow-cyan));
+      transition: all 0.3s ease;
+    }
+
+    .menu ha-icon-button:hover {
+      filter: drop-shadow(0 0 12px var(--glow-blue)) drop-shadow(0 0 20px var(--glow-blue));
+      transform: scale(1.1);
+    }
+
+    /* Menu items */
+    paper-icon-item {
+      background: linear-gradient(135deg,
+        rgba(33, 150, 243, 0.8) 0%,
+        rgba(25, 118, 210, 0.9) 100%);
+      border-radius: 8px !important;
+      border: 2px solid var(--arc-reactor-blue);
+      box-shadow:
+        0 0 15px var(--glow-blue),
+        inset 0 1px 0 rgba(103, 199, 235, 0.3);
+      color: var(--stark-dark);
+      font-family: var(--primary-font-family);
+      font-weight: 600;
+      margin: 4px 8px;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    /* Targeting brackets */
+    paper-icon-item::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 12px;
+      height: 12px;
+      border-top: 2px solid var(--arc-reactor-blue);
+      border-left: 2px solid var(--arc-reactor-blue);
+      transition: all 0.3s ease;
+    }
+
+    paper-icon-item::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      width: 12px;
+      height: 12px;
+      border-bottom: 2px solid var(--arc-reactor-blue);
+      border-right: 2px solid var(--arc-reactor-blue);
+      transition: all 0.3s ease;
+    }
+
+    paper-icon-item:hover, a[aria-selected=true] paper-icon-item {
+      background: linear-gradient(135deg,
+        rgba(103, 199, 235, 0.9) 0%,
+        rgba(79, 195, 247, 1) 100%);
+      color: var(--stark-dark);
+      border-color: var(--stark-gold);
+      box-shadow:
+        0 0 25px var(--glow-blue),
+        0 0 15px var(--stark-gold),
+        inset 0 1px 0 rgba(103, 199, 235, 0.4);
+      transform: translateX(4px) scale(1.02);
+    }
+
+    paper-icon-item span {
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Iconography */
+    ha-icon, mdi, iron-icon, mat-icon, .material-icons {
+      filter: drop-shadow(0 0 4px var(--arc-reactor-blue));
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-variation-settings: 'wght' 400, 'opsz' 24;
+    }
+
+    app-toolbar ha-icon,
+    app-header ha-icon {
+      color: var(--stark-gold) !important;
+      filter: drop-shadow(0 0 6px var(--glow-blue)) drop-shadow(0 0 12px var(--glow-blue));
+      transition: all 0.3s ease;
+    }
+
+    app-toolbar ha-icon:hover,
+    app-header ha-icon:hover {
+      color: var(--stark-white) !important;
+      filter: drop-shadow(0 0 8px var(--glow-blue)) drop-shadow(0 0 16px var(--glow-blue));
+      transform: scale(1.1);
+    }
+
+    .menu ha-icon,
+    paper-icon-item ha-icon {
+      position: relative;
+      filter: drop-shadow(0 0 4px var(--arc-reactor-blue));
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .menu ha-icon:hover,
+    paper-icon-item:hover ha-icon,
+    a[aria-selected="true"] paper-icon-item ha-icon {
+      filter: drop-shadow(0 0 6px var(--glow-blue)) drop-shadow(0 0 12px var(--glow-blue));
+      transform: scale(1.05);
+    }
+
+    a[aria-selected="true"] paper-icon-item ha-icon::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border: 1px solid var(--stark-gold);
+      border-radius: 2px;
+      opacity: 0.6;
+      animation: target-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes target-pulse {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+
+    ha-card ha-icon {
+      filter: drop-shadow(0 0 3px var(--arc-reactor-blue));
+      transition: all 0.2s ease;
+    }
+
+    ha-card:hover ha-icon {
+      filter: drop-shadow(0 0 6px var(--glow-blue));
+      color: var(--glow-blue);
+    }
+
+    /* State-aware icon coloring (blue-spectrum only) */
+    ha-icon[icon*="lightbulb"]:not([style*="color"]) {
+      color: var(--stark-gold);
+      filter: drop-shadow(0 0 4px var(--glow-blue));
+    }
+
+    ha-icon[icon*="power"]:not([style*="color"]) {
+      color: var(--arc-reactor-blue);
+      filter: drop-shadow(0 0 4px var(--glow-blue));
+    }
+
+    ha-icon[icon*="alert"]:not([style*="color"]),
+    ha-icon[icon*="warning"]:not([style*="color"]) {
+      color: var(--warning-amber);
+      filter: drop-shadow(0 0 4px var(--warning-amber));
+    }
+
+    ha-icon[icon*="error"]:not([style*="color"]) {
+      color: var(--danger-red);
+      filter: drop-shadow(0 0 4px var(--glow-blue));
+    }
+
+    /* Buttons */
+    mwc-button, ha-mwc-button, paper-button {
+      font-family: var(--primary-font-family) !important;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    mwc-button:hover, ha-mwc-button:hover, paper-button:hover {
+      box-shadow: 0 0 12px var(--glow-blue);
+      transform: translateY(-1px);
+    }
+
+    /* Switches */
+    ha-switch .mdc-switch__thumb {
+      background: var(--stark-gold) !important;
+      box-shadow: 0 0 8px var(--glow-cyan);
+    }
+
+    ha-switch .mdc-switch--checked .mdc-switch__thumb {
+      background: var(--arc-reactor-blue) !important;
+      box-shadow: 0 0 12px var(--glow-blue);
+    }
+
+    /* Inputs */
+    ha-textfield ha-icon,
+    paper-input ha-icon {
+      color: var(--arc-reactor-blue);
+      filter: drop-shadow(0 0 3px var(--glow-blue));
+    }
+
+    /* Notification icons */
+    .notification ha-icon {
+      animation: notification-pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes notification-pulse {
+      0%, 100% { filter: drop-shadow(0 0 4px var(--arc-reactor-blue)); opacity: 0.8; }
+      50% { filter: drop-shadow(0 0 8px var(--glow-blue)); opacity: 1; }
+    }
+
+    /* More Info dialog icons */
+    more-info-dialog ha-icon {
+      filter: drop-shadow(0 0 3px var(--arc-reactor-blue));
+      transition: all 0.2s ease;
+    }
+
+    .entity-row ha-icon {
+      filter: drop-shadow(0 0 2px var(--arc-reactor-blue));
+    }
+
+    .entity-row:hover ha-icon {
+      filter: drop-shadow(0 0 4px var(--glow-blue));
+      transform: scale(1.05);
+    }
+
+    /* Spinners */
+    paper-spinner-lite {
+      --paper-spinner-color: var(--arc-reactor-blue);
+      filter: drop-shadow(0 0 8px var(--glow-blue));
+    }
+
+    /* Radios / Checkboxes */
+    ha-checkbox .mdc-checkbox__checkmark,
+    ha-radio .mdc-radio__outer-circle {
+      filter: drop-shadow(0 0 4px var(--arc-reactor-blue));
+    }
+
+    /* Common icons */
+    ha-icon[icon="mdi:home"],
+    ha-icon[icon="hass:home"] {
+      filter: drop-shadow(0 0 6px var(--arc-reactor-blue));
+    }
+
+    ha-icon[icon="mdi:settings"],
+    ha-icon[icon="hass:settings"] {
+      filter: drop-shadow(0 0 4px var(--stark-gold));
+    }
+
+    ha-icon[icon*="climate"],
+    ha-icon[icon*="temperature"] {
+      filter: drop-shadow(0 0 4px var(--hud-primary-blue));
+    }
+
+    ha-icon[icon*="security"],
+    ha-icon[icon*="lock"] {
+      filter: drop-shadow(0 0 4px var(--neon-blue));
+    }

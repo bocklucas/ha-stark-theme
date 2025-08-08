@@ -73,8 +73,12 @@ git clone https://github.com/CashWilliams/ha-stark-theme.git
 
 ## 🎮 Activation
 
+You can choose between two variants:
+- Stark (original MCU palette): select `stark`
+- Jarvis Blue HUD (no reds, blue-spectrum only): select `jarvis`
+
 1. Go to your profile in Home Assistant
-2. Select "Iron Man MCU HUD Theme" from the theme dropdown
+2. Choose your desired theme from the theme dropdown
 3. Enjoy your new Stark Industries interface!
 
 ## 🖼️ Background Customization
