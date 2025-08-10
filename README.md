@@ -73,8 +73,12 @@ git clone https://github.com/CashWilliams/ha-stark-theme.git
 
 ## 🎮 Activation
 
+You can choose between two variants:
+- Stark (original MCU palette): select `stark`
+- Jarvis Blue HUD (no reds, blue-spectrum only): select `jarvis`
+
 1. Go to your profile in Home Assistant
-2. Select "Iron Man MCU HUD Theme" from the theme dropdown
+2. Choose your desired theme from the theme dropdown
 3. Enjoy your new Stark Industries interface!
 
 ## 🖼️ Background Customization
@@ -111,6 +115,42 @@ To use your own Iron Man background image:
 - **4K resolution** (3840x2160) works best for large displays
 - **Arc reactor themes** complement the blue color scheme perfectly
 - **Workshop/lab settings** create an immersive Stark Industries feel
+
+## 🛠️ Custom Icon Set (MDI Alternative)
+
+To use a blue-themed Jarvis icon set as an alternative to MDI icons (as discussed in the HA community thread), follow these steps:
+
+1. Download the provided starter icon pack file from this repo: `icons/jarvis-icons.js`.
+2. Copy it to your Home Assistant config directory as `/config/www/jarvis-icons.js`.
+3. In Home Assistant, go to Settings → Dashboards → Three dots (top-right) → Resources → Add Resource:
+   - URL: `/local/jarvis-icons.js`
+   - Resource type: `Module`
+4. Refresh your browser cache (Ctrl+F5) or reload Lovelace.
+5. Use Jarvis icons anywhere you can specify an icon, e.g. in entity cards:
+   ```yaml
+   icon: jarvis:home
+   icon: jarvis:power
+   icon: jarvis:lightbulb
+   icon: jarvis:settings
+   icon: jarvis:lock
+   icon: jarvis:alert
+   icon: jarvis:error
+   icon: jarvis:fan
+   icon: jarvis:thermometer
+   icon: jarvis:automation
+   ```
+
+Optional auto-alias (replace mdi: with jarvis: automatically):
+1. Copy `icons/jarvis-icon-alias.js` to `/config/www/jarvis-icon-alias.js`.
+2. Add it as a resource AFTER `jarvis-icons.js`:
+   - URL: `/local/jarvis-icon-alias.js`
+   - Resource type: `Module`
+3. Extend the `mappedNames` set in `jarvis-icon-alias.js` to cover the mdi names you want auto-mapped.
+
+Notes:
+- The icon file registers an `ha-iconset-svg` named `jarvis`. Replace any `<g id="...">` SVG content with icons from the community thread or your own SVGs. Keep the `id` values the same to preserve names.
+- You can maintain both MDI and Jarvis packs. Use `mdi:<name>` or `jarvis:<name>` interchangeably.
+- Forum discussion: see [Alternative to MDI icons](https://community.home-assistant.io/t/alternative-to-mdi-icons/78133) on the Home Assistant community.
 
 ## 🛠️ Technical Details
 
