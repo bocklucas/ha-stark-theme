@@ -1,666 +1,212 @@
 stark:
-  # Iron Man MCU HUD Color Variables - Based on Authentic Film Design
-  # Primary HUD Blue - Main interface elements (arc reactor blue)
-  arc-reactor-blue: "#67C7EB"
-  hud-primary-blue: "#4FC3F7"
+  # STARK Theme Color Variables - Iron Man MCU Inspired
+  # Primary Colors (Iron Man Blue-Gold palette)
+  jarvis-primary: "#67C7EB"        # Arc Reactor Blue
+  jarvis-secondary: "#4FC3F7"      # HUD Primary Blue
+  jarvis-accent: "#FBCA03"         # Stark Gold (Iron Man accent)
+  jarvis-dark: "#0A0E1A"           # Stark Dark background
+  jarvis-darker: "#051121"         # Deep Space background
+  jarvis-border: "rgba(103, 199, 235, 0.3)"  # Semi-transparent blue borders
+  jarvis-glow: "rgba(103, 199, 235, 0.5)"    # Glow effect color
+  jarvis-text: "#E8EAF6"           # Primary text color (light)
+  jarvis-text-dim: "#90A4AE"       # Dimmed/secondary text
+
+  # Status Colors (Iron Man palette)
+  status-connected: "#67C7EB"      # Connected/Ready (Arc Reactor Blue)
+  status-connecting: "#FFC107"    # Connecting (Warning Amber)
+  status-disconnected: "#F44336"   # Disconnected/Error (Alert Red)
+  status-inactive: "#666"          # Inactive (Gray)
+
+  # Legacy compatibility mappings
+  arc-reactor-blue: "var(--jarvis-primary)"
+  hud-primary-blue: "var(--jarvis-secondary)"
   deep-arc-blue: "#2196F3"
-  
-  # Secondary Blues - Supporting elements
   cyan-color: "#00E5FF"
-  light-hud-blue: "#B3E5FC"
-  
-  # Warning/Targeting Colors - Orange/Gold spectrum
-  stark-gold: "#FBCA03"
-  targeting-orange: "#FF6600"
-  warning-amber: "#FFC107"
-  
-  # Alert/Critical Colors - Red spectrum
-  alert-red: "#F44336"
-  critical-red: "#D32F2F"
-  danger-red: "#C62828"
-  
-  # Background Colors - Deep space/tech aesthetic
-  stark-dark: "#0A0E1A"
+  ice-accent-blue: "#8BE9FF"
+  neon-blue: "#00B0FF"
+  deep-neon-blue: "#0091EA"
+  cobalt-blue: "#0081CB"
+  stark-dark: "var(--jarvis-dark)"
   hud-dark: "#0D1421"
-  deep-space: "#051121"
-  panel-dark: "#1A2332"
-  
-  # Navigation specific colors - Darker for better readability
+  deep-space: "var(--jarvis-darker)"
+  panel-dark: "rgba(26, 35, 50, 0.6)"
   nav-dark: "#0F1419"
   nav-blue: "#1E3A5F"
-  
-  # Metallic/Suit Colors
   stark-grey: "#263238"
   metal-grey: "#37474F"
   suit-silver: "#90A4AE"
-  stark-white: "#E8EAF6"
-  
-  # Glow Effects
+  stark-white: "var(--jarvis-text)"
   glow-blue: "#00E5FF"
+  glow-cyan: "#6EE6FF"
+  glow-ice: "#8BE9FF"
+  stark-gold: "var(--jarvis-accent)"
+  targeting-orange: "#FF6600"
+  warning-amber: "var(--status-connecting)"
+  alert-red: "var(--status-disconnected)"
+  critical-red: "#D32F2F"
+  danger-red: "#C62828"
   glow-gold: "#FFD700"
   glow-red: "#FF1744"
-  
-  # Legacy variables updated to match Iron Man aesthetic
-  dark-cyan-color: "var(--deep-arc-blue)"
-  dark-purple-color: "var(--stark-dark)"
-  dark-red-color: "var(--hud-dark)"
-  orange-color: "var(--targeting-orange)"
-  red-color: "var(--alert-red)"
-  
-  # Iron Man HUD Font Stack - Authentic MCU-inspired typography
-  # Using Orbitron (geometric futuristic), Exo (tech-oriented), Rajdhani (HUD-style)
-  # All available via Google Fonts with fallbacks to system fonts
-  primary-font-family: "'Orbitron', 'Exo 2', 'Rajdhani', 'Eurostile Extended', 'Bank Gothic', 'Microgramma', 'Helvetica Neue', 'Arial', sans-serif"
-  
-  # Enhanced Iron Man HUD Background - Choose your preference:
-  
-  # Option 1: Custom Arc Reactor CSS Effect (RECOMMENDED) - Always works, lightweight
-  background-image: "radial-gradient(circle at center, rgba(103, 199, 235, 0.08) 0%, rgba(103, 199, 235, 0.03) 25%, rgba(10, 14, 26, 0.95) 65%, rgba(5, 17, 33, 1) 100%), linear-gradient(135deg, rgba(103, 199, 235, 0.02) 0%, transparent 40%, rgba(251, 202, 3, 0.01) 100%)"
-  
-  # Alternative Iron Man backgrounds (uncomment to use):
-  
-  # Option 2: Your Own Custom Background
-  # Upload your image to /config/www/images/ and use:
-  # background-image: "center / cover no-repeat fixed url('/local/images/your-iron-man-background.jpg')"
-  
-  # Option 3: Minimal Dark Gradient (Clean, professional)
-  # background-image: "linear-gradient(135deg, rgba(10, 14, 26, 1) 0%, rgba(5, 17, 33, 1) 100%)"
-  
-  # Option 4: Arc Reactor Glow CSS (Stronger effect)
-  # background-image: "radial-gradient(circle at center, rgba(103, 199, 235, 0.15) 0%, rgba(103, 199, 235, 0.08) 20%, rgba(10, 14, 26, 0.9) 50%, rgba(5, 17, 33, 1) 100%)"
-  
-  # For image backgrounds, try these sources:
-  # - WallpaperCave: https://wallpapercave.com/iron-man-wallpapers
-  # - DeviantArt: Search "Iron Man Arc Reactor" or "Iron Man Blueprint"
-  # - Google Images: Search "Iron Man 4K wallpaper dark" with usage rights filter
 
-  # configs - Updated for better navigation readability
-  accent-color: "var(--stark-gold)"
-  app-header-background-color: "var(--nav-dark)"
-  app-header-edit-background-color: "var(--stark-dark)"
-  app-header-edit-text-color: "var(--stark-white)"
-  app-header-text-color: "var(--stark-gold)"
-  app-header-selection-bar-color: "var(--cyan-color)"
-  app-toolbar-font-size: ""
-  card-background-color: "var(--panel-dark)"
-  chip-background-color: "var(--stark-dark)"
-  dark-disabled-opacity: ""
-  dark-divider-opacity: ""
-  dark-primary-background-color: "var(--stark-dark)"
-  dark-primary-opacity: ""
-  dark-secondary-opacity: ""
-  dark-theme-base-color: ""
-  data-table-background-color: "var(--panel-dark)"
-  disabled-color: "var(--metal-grey)"
-  disabled-text-color: "var(--metal-grey)"
-  divider-color: "var(--arc-reactor-blue)"
-  energy-battery-in-color: ""
-  energy-battery-out-color: ""
-  energy-gas-color: ""
-  energy-grid-consumption-color: ""
-  energy-grid-return-color: ""
-  energy-non-fossil-color: ""
-  energy-solar-color: ""
-  error-color: "var(--danger-red)"
-  error-state-color: ""
-  ha-card-background: "var(--panel-dark)"
-  ha-card-border-color: ""
-  ha-card-border-radius: ""
-  ha-card-header-font-size: ""
-  hacs-error-color: "var(--danger-red)"
-  hacs-warning-color: "var(--warning-amber)"
-  hacs-update-color: "var(--cyan-color)"
-  hacs-new-color: "var(--arc-reactor-blue)"
-  hacs--default-icon-color: "var(--hud-primary-blue)"
-  header-height: ""
-  icon-color: "var(--arc-reactor-blue)"
-  info-color: "var(--hud-primary-blue)"
-  input-disabled-fill-color: ""
-  input-disabled-ink-color: ""
-  input-disabled-line-color: ""
-  input-dropdown-icon-color: "var(--stark-gold)"
-  input-fill-color: ""
-  input-hover-line-color: ""
-  input-idle-line-color: ""
-  input-ink-color: ""
-  input-label-ink-color: ""
-  input-outlined-disabled-border-color: ""
-  input-outlined-hover-border-color: ""
-  input-outlined-idle-border-color: ""
-  label-badge-background-color: "var(--alert-red)"
-  label-badge-blue: ""
-  label-badge-green: ""
-  label-badge-grey: ""
-  label-badge-red: ""
-  label-badge-color: "var(--stark-gold)"
-  label-badge-yellow: ""
-  layout_-_display: ""
-  layout-around-aligned_-_align-content: ""
-  layout-around-aligned_-_-ms-align-content: ""
-  layout-around-aligned_-_-ms-flex-line-pack: ""
-  layout-around-aligned_-_-webkit-align-content: ""
-  layout-around-justified_-_justify-content: ""
-  layout-around-justified_-_-ms-flex-pack: ""
-  layout-around-justified_-_-webkit-justify-content: ""
-  layout-baseline_-_align-items: ""
-  layout-baseline_-_-ms-flex-align: ""
-  layout-baseline_-_-webkit-align-items: ""
-  layout-between-aligned_-_align-content: ""
-  layout-between-aligned_-_-ms-align-content: ""
-  layout-between-aligned_-_-ms-flex-line-pack: ""
-  layout-between-aligned_-_-webkit-align-content: ""
-  layout-block_-_display: ""
-  layout-center_-_align-items: ""
-  layout-center_-_-ms-flex-align: ""
-  layout-center_-_-webkit-align-items: ""
-  layout-center-aligned_-_align-content: ""
-  layout-center-aligned_-_-ms-align-content: ""
-  layout-center-aligned_-_-ms-flex-line-pack: ""
-  layout-center-aligned_-_-webkit-align-content: ""
-  layout-center-center_-_align-items: ""
-  layout-center-center_-_justify-content: ""
-  layout-center-center_-_-ms-flex-align: ""
-  layout-center-center_-_-ms-flex-pack: ""
-  layout-center-center_-_-webkit-align-items: ""
-  layout-center-center_-_-webkit-justify-content: ""
-  layout-center-justified_-_justify-content: ""
-  layout-center-justified_-_-ms-flex-pack: ""
-  layout-center-justified_-_-webkit-justify-content: ""
-  layout-end_-_align-items: ""
-  layout-end_-_-ms-flex-align: ""
-  layout-end_-_-webkit-align-items: ""
-  layout-end-aligned_-_align-content: ""
-  layout-end-aligned_-_-ms-align-content: ""
-  layout-end-aligned_-_-ms-flex-line-pack: ""
-  layout-end-aligned_-_-webkit-align-content: ""
-  layout-end-justified_-_justify-content: ""
-  layout-end-justified_-_-ms-flex-pack: ""
-  layout-end-justified_-_-webkit-justify-content: ""
-  layout-fit: ""
-  layout-fit_-_bottom: ""
-  layout-fit_-_left: ""
-  layout-fit_-_position: ""
-  layout-fit_-_right: ""
-  layout-fit_-_top: ""
-  layout-fixed-bottom_-_bottom: ""
-  layout-fixed-bottom_-_left: ""
-  layout-fixed-bottom_-_position: ""
-  layout-fixed-bottom_-_right: ""
-  layout-fixed-left_-_bottom: ""
-  layout-fixed-left_-_left: ""
-  layout-fixed-left_-_position: ""
-  layout-fixed-left_-_top: ""
-  layout-fixed-right_-_bottom: ""
-  layout-fixed-right_-_position: ""
-  layout-fixed-right_-_right: ""
-  layout-fixed-right_-_top: ""
-  layout-fixed-top_-_left: ""
-  layout-fixed-top_-_position: ""
-  layout-fixed-top_-_right: ""
-  layout-fixed-top_-_top: ""
-  layout-flex_-_flex: ""
-  layout-flex_-_flex-basis: ""
-  layout-flex_-_-ms-flex: ""
-  layout-flex_-_-webkit-flex: ""
-  layout-flex_-_-webkit-flex-basis: ""
-  layout-flex-10_-_flex: ""
-  layout-flex-10_-_-ms-flex: ""
-  layout-flex-10_-_-webkit-flex: ""
-  layout-flex-11_-_flex: ""
-  layout-flex-11_-_-ms-flex: ""
-  layout-flex-11_-_-webkit-flex: ""
-  layout-flex-12_-_flex: ""
-  layout-flex-12_-_-ms-flex: ""
-  layout-flex-12_-_-webkit-flex: ""
-  layout-flex-2_-_flex: ""
-  layout-flex-2_-_-ms-flex: ""
-  layout-flex-2_-_-webkit-flex: ""
-  layout-flex-3_-_flex: ""
-  layout-flex-3_-_-ms-flex: ""
-  layout-flex-3_-_-webkit-flex: ""
-  layout-flex-4_-_flex: ""
-  layout-flex-4_-_-ms-flex: ""
-  layout-flex-4_-_-webkit-flex: ""
-  layout-flex-5_-_flex: ""
-  layout-flex-5_-_-ms-flex: ""
-  layout-flex-5_-_-webkit-flex: ""
-  layout-flex-6_-_flex: ""
-  layout-flex-6_-_-ms-flex: ""
-  layout-flex-6_-_-webkit-flex: ""
-  layout-flex-7_-_flex: ""
-  layout-flex-7_-_-ms-flex: ""
-  layout-flex-7_-_-webkit-flex: ""
-  layout-flex-8_-_flex: ""
-  layout-flex-8_-_-ms-flex: ""
-  layout-flex-8_-_-webkit-flex: ""
-  layout-flex-9_-_flex: ""
-  layout-flex-9_-_-ms-flex: ""
-  layout-flex-9_-_-webkit-flex: ""
-  layout-flex-auto_-_flex: ""
-  layout-flex-auto_-_-ms-flex: ""
-  layout-flex-auto_-_-webkit-flex: ""
-  layout-flex-none_-_flex: ""
-  layout-flex-none_-_-ms-flex: ""
-  layout-flex-none_-_-webkit-flex: ""
-  layout-fullbleed_-_height: ""
-  layout-fullbleed_-_margin: ""
-  layout-horizontal_-_display: ""
-  layout-horizontal_-_flex-direction: ""
-  layout-horizontal_-_-ms-flex-direction: ""
-  layout-horizontal_-_-webkit-flex-direction: ""
-  layout-horizontal-reverse_-_display: ""
-  layout-horizontal-reverse_-_flex-direction: ""
-  layout-horizontal-reverse_-_-ms-flex-direction: ""
-  layout-horizontal-reverse_-_-webkit-flex-direction: ""
-  layout-inline_-_display: ""
-  layout-invisible_-_visibility: ""
-  layout-justified_-_justify-content: ""
-  layout-justified_-_-ms-flex-pack: ""
-  layout-justified_-_-webkit-justify-content: ""
-  layout-relative_-_position: ""
-  layout-scroll_-_overflow: ""
-  layout-scroll_-_-webkit-overflow-scrolling: ""
-  layout-self-baseline_-_align-self: ""
-  layout-self-baseline_-_-ms-align-self: ""
-  layout-self-baseline_-_-webkit-align-self: ""
-  layout-self-center_-_align-self: ""
-  layout-self-center_-_-ms-align-self: ""
-  layout-self-center_-_-webkit-align-self: ""
-  layout-self-end_-_align-self: ""
-  layout-self-end_-_-ms-align-self: ""
-  layout-self-end_-_-webkit-align-self: ""
-  layout-self-start_-_align-self: ""
-  layout-self-start_-_-ms-align-self: ""
-  layout-self-start_-_-webkit-align-self: ""
-  layout-self-stretch_-_align-self: ""
-  layout-self-stretch_-_-ms-align-self: ""
-  layout-self-stretch_-_-webkit-align-self: ""
-  layout-start_-_align-items: ""
-  layout-start_-_-ms-flex-align: ""
-  layout-start_-_-webkit-align-items: ""
-  layout-start-aligned_-_align-content: ""
-  layout-start-aligned_-_-ms-align-content: ""
-  layout-start-aligned_-_-ms-flex-line-pack: ""
-  layout-start-aligned_-_-webkit-align-content: ""
-  layout-start-justified_-_justify-content: ""
-  layout-start-justified_-_-ms-flex-pack: ""
-  layout-start-justified_-_-webkit-justify-content: ""
-  layout-vertical_-_display: ""
-  layout-vertical_-_flex-direction: ""
-  layout-vertical_-_-ms-flex-direction: ""
-  layout-vertical_-_-webkit-flex-direction: ""
-  layout-vertical-reverse_-_display: ""
-  layout-vertical-reverse_-_flex-direction: ""
-  layout-vertical-reverse_-_-ms-flex-direction: ""
-  layout-vertical-reverse_-_-webkit-flex-direction: ""
-  layout-wrap_-_flex-wrap: ""
-  layout-wrap_-_-ms-flex-wrap: ""
-  layout-wrap_-_-webkit-flex-wrap: ""
-  layout-wrap-reverse_-_flex-wrap: ""
-  layout-wrap-reverse_-_-ms-flex-wrap: ""
-  layout-wrap-reverse_-_-webkit-flex-wrap: ""
+  # Typography - Orbitron + Rajdhani
+  primary-font-family: "'Orbitron', 'Rajdhani', 'Helvetica Neue', 'Arial', sans-serif"
+  heading-font-family: "'Orbitron', 'Helvetica Neue', 'Arial', sans-serif"
+  body-font-family: "'Rajdhani', 'Helvetica Neue', 'Arial', sans-serif"
+
+  # Background - Iron Man gradient
+  background-image: "radial-gradient(circle at center, rgba(103, 199, 235, 0.08) 0%, rgba(103, 199, 235, 0.03) 25%, rgba(10, 14, 26, 0.95) 65%, rgba(5, 17, 33, 1) 100%), linear-gradient(135deg, rgba(103, 199, 235, 0.02) 0%, transparent 40%, rgba(251, 202, 3, 0.01) 100%)"
   lovelace-background: "var(--background-image)"
-  light-disabled-opacity: "0.3"
-  light-divider-opacity: ""
-  light-primary-background-color: "var(--stark-dark)"
-  light-primary-opacity: ""
-  light-secondary-opacity: ""
-  light-theme-background-color: "var(--stark-dark)"
-  light-theme-disabled-color: "var(--cyan-color)"
-  light-theme-secondary-background-color: "var(--panel-dark)"
-  light-theme-secondary-color: "var(--hud-primary-blue)"
-  light-theme-color: "var(--arc-reactor-blue)"
-  markdown-code-background-color: "var(--stark-dark)"
-  material-background-color: "var(--stark-dark)"
-  material-body-color: "var(--arc-reactor-blue)"
-  material-button-font-size: ""
-  material-caption-font-size: ""
-  material-disabled-color: "var(--metal-grey)"
-  material-divider-color: ""
-  material-error-color: "var(--danger-red)"
-  material-h6-font-size: ""
-  material-primary-background-color: "var(--stark-dark)"
-  material-primary-contrast-color: ""
-  material-primary-color: "var(--arc-reactor-blue)"
-  material-secondary-background-color: "var(--panel-dark)"
-  material-secondary-color: "var(--hud-primary-blue)"
-  material-shadow-elevation-12dp: ""
-  material-shadow-elevation-16dp: ""
-  material-shadow-elevation-24dp: ""
-  material-shadow-elevation-2dp: ""
-  material-shadow-elevation-3dp: ""
-  material-shadow-elevation-4dp: ""
-  material-shadow-elevation-6dp: ""
-  material-shadow-elevation-8dp: ""
-  material-small-font-size: ""
-  mdc-button-disabled-ink-color: ""
-  mdc-button-outline-color: ""
-  mdc-button-raised-box-shadow-hover: "0 0 15px 5px var(--glow-blue)"
-  mdc-checkbox-disabled-color: ""
-  mdc-checkbox-unchecked-color: "var(--arc-reactor-blue)"
-  mdc-dialog-scroll-divider-color: ""
-  mdc-radio-disabled-color: ""
-  mdc-radio-unchecked-color: ""
-  mdc-ripple-color: "var(--arc-reactor-blue)"
-  mdc-select-disabled-dropdown-icon-color: "var(--metal-grey)"
-  mdc-select-disabled-fill-color: "var(--stark-dark)"
-  mdc-select-disabled-ink-color: "var(--metal-grey)"
-  mdc-select-dropdown-icon-color: "var(--stark-gold)"
-  mdc-select-fill-color: "var(--panel-dark)"
-  mdc-select-hover-line-color: ""
-  mdc-select-idle-line-color: ""
-  mdc-select-ink-color: "var(--arc-reactor-blue)"
-  mdc-select-label-ink-color: "var(--hud-primary-blue)"
-  mdc-select-outlined-disabled-border-color: ""
-  mdc-select-outlined-hover-border-color: ""
-  mdc-select-outlined-idle-border-color: ""
-  mdc-tab-text-label-color-default: ""
-  mdc-text-field-disabled-fill-color: ""
-  mdc-text-field-disabled-ink-color: ""
-  mdc-text-field-disabled-line-color: ""
-  mdc-text-field-fill-color: "var(--panel-dark)"
-  mdc-text-field-hover-line-color: ""
-  mdc-text-field-idle-line-color: ""
-  mdc-text-field-ink-color: "var(--arc-reactor-blue)"
-  mdc-text-field-label-ink-color: "var(--hud-primary-blue)"
-  mdc-text-field-outlined-disabled-border-color: ""
-  mdc-text-field-outlined-hover-border-color: ""
-  mdc-text-field-outlined-idle-border-color: ""
-  mdc-theme-error: ""
-  mdc-theme-on-primary: "var(--stark-dark)"
-  mdc-theme-on-secondary: "var(--stark-dark)"
+
+  # Home Assistant theme variables
+  accent-color: "var(--jarvis-accent)"
+  app-header-background-color: "rgba(15, 20, 25, 0.6)"
+  app-header-edit-background-color: "var(--jarvis-dark)"
+  app-header-edit-text-color: "var(--jarvis-text)"
+  app-header-text-color: "var(--jarvis-accent)"
+  app-header-selection-bar-color: "var(--cyan-color)"
+  card-background-color: "rgba(26, 35, 50, 0.6)"
+  chip-background-color: "var(--jarvis-dark)"
+  dark-primary-background-color: "var(--jarvis-dark)"
+  data-table-background-color: "rgba(26, 35, 50, 0.6)"
+  disabled-color: "var(--status-inactive)"
+  disabled-text-color: "var(--status-inactive)"
+  divider-color: "var(--jarvis-border)"
+  error-color: "var(--status-disconnected)"
+  ha-card-background: "rgba(26, 35, 50, 0.6)"
+  icon-color: "var(--jarvis-primary)"
+  info-color: "var(--jarvis-secondary)"
+  input-dropdown-icon-color: "var(--jarvis-accent)"
+  label-badge-background-color: "var(--status-disconnected)"
+  label-badge-color: "var(--jarvis-text)"
+  light-theme-background-color: "var(--jarvis-dark)"
+  light-theme-disabled-color: "var(--jarvis-text-dim)"
+  light-theme-secondary-background-color: "rgba(26, 35, 50, 0.6)"
+  light-theme-secondary-color: "var(--jarvis-secondary)"
+  light-theme-color: "var(--jarvis-primary)"
+  material-background-color: "var(--jarvis-dark)"
+  material-body-color: "var(--jarvis-primary)"
+  material-disabled-color: "var(--status-inactive)"
+  material-primary-background-color: "var(--jarvis-dark)"
+  material-primary-color: "var(--jarvis-primary)"
+  material-secondary-background-color: "rgba(26, 35, 50, 0.6)"
+  material-secondary-color: "var(--jarvis-secondary)"
+  mdc-button-raised-box-shadow-hover: "0 0 20px rgba(103, 199, 235, 0.1), inset 0 0 20px rgba(103, 199, 235, 0.05)"
+  mdc-checkbox-unchecked-color: "var(--jarvis-primary)"
+  mdc-ripple-color: "var(--jarvis-primary)"
+  mdc-select-disabled-dropdown-icon-color: "var(--status-inactive)"
+  mdc-select-disabled-fill-color: "var(--jarvis-dark)"
+  mdc-select-disabled-ink-color: "var(--status-inactive)"
+  mdc-select-dropdown-icon-color: "var(--jarvis-accent)"
+  mdc-select-fill-color: "rgba(26, 35, 50, 0.6)"
+  mdc-select-ink-color: "var(--jarvis-primary)"
+  mdc-select-label-ink-color: "var(--jarvis-secondary)"
+  mdc-text-field-fill-color: "rgba(26, 35, 50, 0.6)"
+  mdc-text-field-ink-color: "var(--jarvis-primary)"
+  mdc-text-field-label-ink-color: "var(--jarvis-secondary)"
+  mdc-theme-on-primary: "var(--jarvis-dark)"
+  mdc-theme-on-secondary: "var(--jarvis-dark)"
   mdc-theme-on-surface: "var(--cyan-color)"
-  mdc-theme-primary: "var(--arc-reactor-blue)"
-  mdc-theme-secondary: "var(--stark-gold)"
-  mdc-theme-surface: "var(--panel-dark)"
-  mdc-theme-background: "var(--stark-dark)"
-  mdc-theme-text-disabled-on-light: ""
-  mdc-theme-text-hint-on-background: ""
-  mdc-theme-text-icon-on-background: ""
-  mdc-theme-text-primary-on-background: "var(--arc-reactor-blue)"
-  mdc-theme-text-secondary-on-background: ""
-  mini-media-player-overlay-color-stop: ""
-  mush-rgb-red: ""
-  mush-rgb-pink: ""
-  mush-rgb-purple: ""
-  mush-rgb-deep-purple: ""
-  mush-rgb-indigo: ""
-  mush-rgb-blue: ""
-  mush-rgb-light-blue: ""
-  mush-rgb-cyan: ""
-  mush-rgb-teal: ""
-  mush-rgb-green: ""
-  mush-rgb-light-green: ""
-  mush-rgb-lime: ""
-  mush-rgb-yellow: ""
-  mush-rgb-amber: ""
-  mush-rgb-orange: ""
-  mush-rgb-deep-orange: ""
-  mush-rgb-brown: ""
-  mush-rgb-grey: ""
-  mush-rgb-blue-grey: ""
-  mush-rgb-black: ""
-  mush-rgb-white: ""
-  mush-rgb-info: ""
-  mush-rgb-success: ""
-  mush-rgb-warning: ""
-  mush-rgb-danger: ""
-  mush-rgb-state-cover: ""
-  mush-rgb-state-fan: ""
-  mush-rgb-state-light: ""
-  mush-rgb-state-entity: "var(--arc-reactor-blue)"
-  paper-dropdown-menu: ""
-  paper-dropdown-menu-button: ""
-  paper-dropdown-menu-disabled: ""
-  paper-dropdown-menu-icon: ""
-  paper-dropdown-menu-input: ""
-  paper-dropdown-menu-ripple: ""
-  paper-font-body1_-_font-family: "var(--primary-font-family)"
-  paper-font-body1_-_font-size: ""
-  paper-font-body1_-_font-weight: ""
-  paper-font-body1_-_line-height: ""
-  paper-font-body1_-_-webkit-font-smoothing: ""
-  paper-font-body2_-_font-family: "var(--primary-font-family)"
-  paper-font-body2_-_font-size: ""
-  paper-font-body2_-_font-weight: ""
-  paper-font-body2_-_line-height: ""
-  paper-font-body2_-_-webkit-font-smoothing: ""
-  paper-font-button_-_font-family: "var(--primary-font-family)"
-  paper-font-button_-_font-size: ""
-  paper-font-button_-_font-weight: ""
-  paper-font-button_-_letter-spacing: ""
-  paper-font-button_-_line-height: ""
-  paper-font-button_-_overflow: ""
-  paper-font-button_-_text-overflow: ""
-  paper-font-button_-_text-transform: ""
-  paper-font-button_-_-webkit-font-smoothing: ""
-  paper-font-button_-_white-space: ""
-  paper-font-caption_-_font-family: "var(--primary-font-family)"
-  paper-font-caption_-_font-size: ""
-  paper-font-caption_-_font-weight: ""
-  paper-font-caption_-_letter-spacing: ""
-  paper-font-caption_-_line-height: ""
-  paper-font-caption_-_overflow: ""
-  paper-font-caption_-_text-overflow: ""
-  paper-font-caption_-_-webkit-font-smoothing: ""
-  paper-font-caption_-_white-space: ""
+  mdc-theme-primary: "var(--jarvis-primary)"
+  mdc-theme-secondary: "var(--jarvis-accent)"
+  mdc-theme-surface: "rgba(26, 35, 50, 0.6)"
+  mdc-theme-background: "var(--jarvis-dark)"
+  mdc-theme-text-primary-on-background: "var(--jarvis-primary)"
+  mush-rgb-state-entity: "var(--jarvis-primary)"
+  paper-font-body1_-_font-family: "var(--body-font-family)"
+  paper-font-body2_-_font-family: "var(--body-font-family)"
+  paper-font-button_-_font-family: "var(--heading-font-family)"
+  paper-font-caption_-_font-family: "var(--body-font-family)"
   paper-font-code1_-_font-family: "var(--primary-font-family)"
-  paper-font-code1_-_font-size: ""
-  paper-font-code1_-_font-weight: ""
-  paper-font-code1_-_line-height: ""
-  paper-font-code1_-_-webkit-font-smoothing: ""
   paper-font-code2_-_font-family: "var(--primary-font-family)"
-  paper-font-code2_-_font-size: ""
-  paper-font-code2_-_font-weight: ""
-  paper-font-code2_-_line-height: ""
-  paper-font-code2_-_-webkit-font-smoothing: ""
   paper-font-common-base_-_font-family: "var(--primary-font-family)"
-  paper-font-common-base_-_-webkit-font-smoothing: ""
   paper-font-common-code_-_font-family: "var(--primary-font-family)"
-  paper-font-common-code_-_-webkit-font-smoothing: ""
-  paper-font-common-expensive-kerning_-_text-rendering: ""
-  paper-font-common-nowrap_-_overflow: ""
-  paper-font-common-nowrap_-_text-overflow: ""
-  paper-font-common-nowrap_-_white-space: ""
-  paper-font-display1_-_font-family: "var(--primary-font-family)"
-  paper-font-display1_-_font-size: ""
-  paper-font-display1_-_font-weight: ""
-  paper-font-display1_-_letter-spacing: ""
-  paper-font-display1_-_line-height: ""
-  paper-font-display1_-_-webkit-font-smoothing: ""
-  paper-font-display2_-_font-family: "var(--primary-font-family)"
-  paper-font-display2_-_font-size: ""
-  paper-font-display2_-_font-weight: ""
-  paper-font-display2_-_letter-spacing: ""
-  paper-font-display2_-_line-height: ""
-  paper-font-display2_-_-webkit-font-smoothing: ""
-  paper-font-display3_-_font-family: "var(--primary-font-family)"
-  paper-font-display3_-_font-size: ""
-  paper-font-display3_-_font-weight: ""
-  paper-font-display3_-_letter-spacing: ""
-  paper-font-display3_-_line-height: ""
-  paper-font-display3_-_overflow: ""
-  paper-font-display3_-_text-overflow: ""
-  paper-font-display3_-_-webkit-font-smoothing: ""
-  paper-font-display3_-_white-space: ""
-  paper-font-display4_-_font-family: "var(--primary-font-family)"
-  paper-font-display4_-_font-size: ""
-  paper-font-display4_-_font-weight: ""
-  paper-font-display4_-_letter-spacing: ""
-  paper-font-display4_-_line-height: ""
-  paper-font-display4_-_overflow: ""
-  paper-font-display4_-_text-overflow: ""
-  paper-font-display4_-_-webkit-font-smoothing: ""
-  paper-font-display4_-_white-space: ""
-  paper-font-headline_-_font-family: "var(--primary-font-family)"
-  paper-font-headline_-_font-size: ""
-  paper-font-headline_-_font-weight: ""
-  paper-font-headline_-_letter-spacing: ""
-  paper-font-headline_-_line-height: ""
-  paper-font-headline_-_overflow: ""
-  paper-font-headline_-_text-overflow: ""
-  paper-font-headline_-_-webkit-font-smoothing: ""
-  paper-font-headline_-_white-space: ""
+  paper-font-display1_-_font-family: "var(--heading-font-family)"
+  paper-font-display2_-_font-family: "var(--heading-font-family)"
+  paper-font-display3_-_font-family: "var(--heading-font-family)"
+  paper-font-display4_-_font-family: "var(--heading-font-family)"
+  paper-font-headline_-_font-family: "var(--heading-font-family)"
   paper-font-menu_-_font-family: "var(--primary-font-family)"
-  paper-font-menu_-_font-size: ""
-  paper-font-menu_-_font-weight: ""
-  paper-font-menu_-_line-height: ""
-  paper-font-menu_-_overflow: ""
-  paper-font-menu_-_text-overflow: ""
-  paper-font-menu_-_-webkit-font-smoothing: ""
-  paper-font-menu_-_white-space: ""
-  paper-font-subhead: ""
   paper-font-subhead_-_font-family: "var(--primary-font-family)"
-  paper-font-subhead_-_font-size: ""
-  paper-font-subhead_-_font-weight: ""
-  paper-font-subhead_-_line-height: ""
-  paper-font-subhead_-_overflow: ""
-  paper-font-subhead_-_text-overflow: ""
-  paper-font-subhead_-_-webkit-font-smoothing: ""
-  paper-font-subhead_-_white-space: ""
-  paper-font-title_-_font-family: "var(--primary-font-family)"
-  paper-font-title_-_font-size: ""
-  paper-font-title_-_font-weight: ""
-  paper-font-title_-_line-height: ""
-  paper-font-title_-_overflow: ""
-  paper-font-title_-_text-overflow: ""
-  paper-font-title_-_-webkit-font-smoothing: ""
-  paper-font-title_-_white-space: ""
-  paper-input-container-color: "var(--arc-reactor-blue)"
-  paper-input-container-background-color: ""
-  paper-input-container-input: ""
-  paper-input-container-input_-_font-size: ""
-  paper-input-container-input-align: ""
-  paper-input-container-input-color: "var(--stark-white)"
+  paper-font-title_-_font-family: "var(--heading-font-family)"
+  paper-input-container-color: "var(--jarvis-primary)"
+  paper-input-container-input-color: "var(--jarvis-text)"
   paper-input-container-focus-color: "var(--glow-blue)"
-  paper-input-container-shared-input-style_-_background: ""
-  paper-input-container-shared-input-style_-_border: ""
-  paper-input-container-shared-input-style_-_box-shadow: ""
-  paper-input-container-shared-input-style_-_color: "var(--stark-white)"
-  paper-input-container-shared-input-style_-_font-family: "var(--primary-font-family)"
-  paper-input-container-shared-input-style_-_font-size: ""
-  paper-input-container-shared-input-style_-_font-weight: ""
-  paper-input-container-shared-input-style_-_line-height: ""
-  paper-input-container-shared-input-style_-_margin: ""
-  paper-input-container-shared-input-style_-_max-width: ""
-  paper-input-container-shared-input-style_-_outline: ""
-  paper-input-container-shared-input-style_-_padding: ""
-  paper-input-container-shared-input-style_-_position: ""
-  paper-input-container-shared-input-style_-_text-align: ""
-  paper-input-container-shared-input-style_-_vertical-align: ""
-  paper-input-container-shared-input-style_-_-webkit-appearance: ""
-  paper-input-container-shared-input-style_-_-webkit-font-smoothing: ""
-  paper-input-container-shared-input-style_-_width: ""
-  paper-item-disabled: ""
-  paper-item-disabled-color: ""
-  paper-item-focused: ""
-  paper-item-focused-before: ""
-  paper-item-icon-active-color: "var(--stark-gold)"
-  paper-item-icon-color: "var(--arc-reactor-blue)"
-  paper-item-min-height: ""
+  paper-input-container-shared-input-style_-_color: "var(--jarvis-text)"
+  paper-input-container-shared-input-style_-_font-family: "var(--body-font-family)"
+  paper-item-icon-active-color: "var(--jarvis-accent)"
+  paper-item-icon-color: "var(--jarvis-primary)"
   paper-item-selected: "var(--glow-blue)"
-  paper-item-selected-weight: ""
-  paper-listbox-background-color: "var(--panel-dark)"
-  paper-slider-active-color: "var(--arc-reactor-blue)"
-  paper-slider-container-color: "var(--stark-dark)"
-  paper-slider-knob-color: "var(--stark-gold)"
-  paper-slider-knob-start-color: "var(--arc-reactor-blue)"
+  paper-listbox-background-color: "rgba(26, 35, 50, 0.6)"
+  paper-slider-active-color: "var(--jarvis-primary)"
+  paper-slider-container-color: "var(--jarvis-dark)"
+  paper-slider-knob-color: "var(--jarvis-accent)"
+  paper-slider-knob-start-color: "var(--jarvis-primary)"
   paper-slider-pin-color: "var(--targeting-orange)"
   paper-slider-pin-start-color: "var(--glow-blue)"
-  paper-slider-secondary-color: "var(--hud-primary-blue)"
+  paper-slider-secondary-color: "var(--jarvis-secondary)"
   paper-tab-ink: "var(--glow-blue)"
-  primary-color: "var(--arc-reactor-blue)"
-  primary-background-color: "var(--stark-dark)"
-  primary-text-color: "var(--stark-white)"
-  rgb-accent-color: "var(--stark-gold)"
-  rgb-card-background-color: "var(--panel-dark)"
-  rgb-primary-background-color: "var(--stark-dark)"
+  primary-color: "var(--jarvis-primary)"
+  primary-background-color: "var(--jarvis-dark)"
+  primary-text-color: "var(--jarvis-text)"
+  rgb-accent-color: "var(--jarvis-accent)"
+  rgb-card-background-color: "rgba(26, 35, 50, 0.6)"
+  rgb-primary-background-color: "var(--jarvis-dark)"
   rgb-primary-color: "var(--targeting-orange)"
-  rgb-secondary-color: "var(--arc-reactor-blue)"
-  rgb-text-primary-background-color: "var(--stark-dark)"
-  scrollbar-thumb-color: ""
-  secondary-background-color: "var(--panel-dark)"
-  secondary-color: "var(--arc-reactor-blue)"
-  secondary-text-color: "var(--hud-primary-blue)"
-  shadow-elevation-12dp_-_box-shadow: ""
-  shadow-elevation-16dp_-_box-shadow: ""
-  shadow-elevation-24dp_-_box-shadow: ""
-  shadow-elevation-2dp_-_box-shadow: ""
-  shadow-elevation-3dp_-_box-shadow: ""
-  shadow-elevation-4dp_-_box-shadow: ""
-  shadow-elevation-6dp_-_box-shadow: ""
-  shadow-elevation-8dp_-_box-shadow: ""
-  shadow-none_-_box-shadow: ""
-  shadow-transition_-_transition: ""
-  sidebar-background-color: "var(--stark-dark)"
-  sidebar-icon-color: "var(--stark-gold)"
-  sidebar-selected-background-color: "var(--alert-red)"
+  rgb-secondary-color: "var(--jarvis-primary)"
+  rgb-text-primary-background-color: "var(--jarvis-dark)"
+  secondary-background-color: "rgba(26, 35, 50, 0.6)"
+  secondary-color: "var(--jarvis-primary)"
+  secondary-text-color: "var(--jarvis-secondary)"
+  sidebar-background-color: "var(--jarvis-dark)"
+  sidebar-icon-color: "var(--jarvis-accent)"
+  sidebar-selected-background-color: "rgba(79, 195, 247, 0.15)"
   sidebar-selected-icon-color: "var(--glow-blue)"
-  sidebar-selected-color: "var(--arc-reactor-blue)"
-  sidebar-selected-text-color: "var(--stark-white)"
-  sidebar-color: "var(--hud-primary-blue)"
-  slider-color: "var(--arc-reactor-blue)"
-  slider-secondary-color: "var(--stark-gold)"
-  slider-track-color: "var(--stark-dark)"
-  state-climate-auto-color: ""
-  state-climate-cool-color: ""
-  state-climate-dry-color: ""
-  state-climate-eco-color: ""
-  state-climate-fan_only-color: ""
-  state-climate-heat-color: ""
-  state-climate-idle-color: ""
-  state-climate-manual-color: ""
-  state-climate-off-color: ""
+  sidebar-selected-color: "var(--jarvis-primary)"
+  sidebar-selected-text-color: "var(--jarvis-text)"
+  sidebar-color: "var(--jarvis-secondary)"
+  slider-color: "var(--jarvis-primary)"
+  slider-secondary-color: "var(--jarvis-accent)"
+  slider-track-color: "var(--jarvis-dark)"
   state-switch-on-color: "var(--glow-blue)"
-  state-switch-active-color: "var(--arc-reactor-blue)"
-  state-switch-inactive-color: "var(--metal-grey)"
-  state-active-color: "var(--arc-reactor-blue)"
-  state-color: "var(--hud-primary-blue)"
-  state-home-color: ""
-  state-icon-active-color: "var(--stark-gold)"
-  state-icon-color: "var(--arc-reactor-blue)"
-  state-icon-error-color: ""
-  state-icon-unavailable-color: ""
-  state-idle-color: ""
-  state-not_home-color: ""
-  state-off-color: ""
-  state-on-color: ""
-  state-unavailable-color: ""
-  state-unknown-color: ""
+  state-switch-active-color: "var(--jarvis-primary)"
+  state-switch-inactive-color: "var(--status-inactive)"
+  state-active-color: "var(--jarvis-primary)"
+  state-color: "var(--jarvis-secondary)"
+  state-icon-active-color: "var(--jarvis-accent)"
+  state-icon-color: "var(--jarvis-primary)"
   success-color: "#00FF88"
-  switch-checked-button-color: "var(--stark-gold)"
+  switch-checked-button-color: "var(--jarvis-accent)"
   switch-checked-color: "var(--glow-blue)"
-  switch-checked-track-color: "var(--arc-reactor-blue)"
-  switch-unchecked-button-color: "var(--metal-grey)"
-  switch-unchecked-color: "var(--stark-dark)"
-  switch-unchecked-track-color: "var(--panel-dark)"
-  table-row-alternative-background-color: "var(--panel-dark)"
-  table-row-background-color: "var(--stark-dark)"
-  text-accent-color: "var(--stark-gold)"
-  text-light-primary-background-color: "var(--stark-dark)"
-  text-primary-color: "var(--stark-white)"
-  text-primary-background-color: "var(--panel-dark)"
-  warning-color: "var(--warning-amber)"
+  switch-checked-track-color: "var(--jarvis-primary)"
+  switch-unchecked-button-color: "var(--status-inactive)"
+  switch-unchecked-color: "var(--jarvis-dark)"
+  switch-unchecked-track-color: "rgba(26, 35, 50, 0.6)"
+  table-row-alternative-background-color: "rgba(26, 35, 50, 0.6)"
+  table-row-background-color: "var(--jarvis-dark)"
+  text-accent-color: "var(--jarvis-accent)"
+  text-light-primary-background-color: "var(--jarvis-dark)"
+  text-primary-color: "var(--jarvis-text)"
+  text-primary-background-color: "rgba(26, 35, 50, 0.6)"
+  warning-color: "var(--status-connecting)"
 
   # card-mod
   card-mod-theme: stark
 
   card-mod-root: |
-    /* Import Iron Man HUD fonts from Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@100;200;300;400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
-    
-    app-toolbar {
-      font-family: var(--primary-font-family);
-      background: linear-gradient(135deg, var(--nav-dark) 0%, var(--hud-dark) 50%, var(--stark-dark) 100%);
-      box-shadow: 
-        0 0 15px 3px rgba(103, 199, 235, 0.4), 
-        0 2px 6px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(103, 199, 235, 0.15);
-      text-shadow: 0 0 6px var(--glow-gold);
-      border-bottom: 1px solid var(--arc-reactor-blue);
+    /* Import STARK Theme fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+    /* Base body styles */
+    body {
+      font-family: var(--body-font-family);
+      color: var(--jarvis-text);
+      background: var(--background-image);
+      overflow: hidden;
+      height: 100vh;
     }
-    
-    /* Add subtle HUD grid overlay */
+
+    /* Animated grid overlay - Iron Man HUD style */
     body::before {
       content: '';
       position: fixed;
@@ -674,25 +220,108 @@ stark:
       background-size: 20px 20px;
       pointer-events: none;
       z-index: -1;
+      animation: gridMove 28s linear infinite alternate;
+      will-change: transform;
+    }
+
+    @keyframes gridMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(20px, 20px); }
+    }
+
+    /* Gentle rotating conic glow - Arc Reactor effect */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 140vmax;
+      height: 140vmax;
+      transform: translate(-50%, -50%) rotate(0deg);
+      background: conic-gradient(from 0deg,
+        rgba(79, 195, 247, 0.06) 0deg 20deg,
+        transparent 20deg 40deg,
+        rgba(103, 199, 235, 0.05) 40deg 60deg,
+        transparent 60deg 120deg,
+        rgba(103, 199, 235, 0.04) 120deg 140deg,
+        transparent 140deg 360deg);
+      filter: blur(20px);
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      z-index: -2;
+      animation: reactorRotate 240s linear infinite;
+      will-change: transform;
+    }
+
+    @keyframes reactorRotate {
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    /* App toolbar - glassmorphism header */
+    app-toolbar {
+      font-family: var(--heading-font-family);
+      background: linear-gradient(135deg, var(--nav-dark) 0%, var(--hud-dark) 50%, var(--jarvis-dark) 100%);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--jarvis-border);
+      border-radius: 0 0 12px 12px;
+      box-shadow: 
+        0 0 15px 3px rgba(103, 199, 235, 0.4),
+        0 2px 6px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(103, 199, 235, 0.15);
+      padding: 20px 30px;
+      text-shadow: 0 0 6px var(--glow-blue);
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgba(103, 199, 235, 0.1);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--jarvis-primary);
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--glow-blue);
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      body::before, body::after {
+        animation: none !important;
+      }
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
 
   card-mod-card: |
+    /* Card base - glassmorphism effect with Iron Man styling */
     ha-card {
       border-radius: 12px;
-      border: 2px solid var(--arc-reactor-blue);
+      border: 2px solid var(--jarvis-border);
       box-shadow: 
-        0 0 25px 4px var(--glow-blue), 
-        0 4px 12px var(--alert-red),
+        0 0 25px 4px var(--glow-blue),
+        0 4px 12px rgba(0, 0, 0, 0.3),
         inset 0 1px 0 rgba(103, 199, 235, 0.2);
-      background: linear-gradient(135deg, 
-        rgba(26, 35, 50, 0.95) 0%, 
-        rgba(13, 20, 33, 0.98) 50%, 
+      background: linear-gradient(135deg,
+        rgba(26, 35, 50, 0.95) 0%,
+        rgba(13, 20, 33, 0.98) 50%,
         rgba(10, 14, 26, 1) 100%);
-      font-family: var(--primary-font-family);
-      color: var(--stark-white);
+      backdrop-filter: blur(10px);
+      font-family: var(--body-font-family);
+      color: var(--jarvis-text);
       position: relative;
       overflow: hidden;
-      backdrop-filter: blur(10px);
+      padding: 30px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     /* Arc reactor-style corner indicators */
@@ -704,17 +333,17 @@ stark:
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: radial-gradient(circle, var(--arc-reactor-blue) 0%, transparent 70%);
+      background: radial-gradient(circle, var(--jarvis-primary) 0%, transparent 70%);
       box-shadow: 0 0 12px var(--glow-blue);
-      animation: pulse-arc 2s ease-in-out infinite;
+      animation: pulseArc 2s ease-in-out infinite;
     }
-    
-    @keyframes pulse-arc {
+
+    @keyframes pulseArc {
       0%, 100% { opacity: 0.6; transform: scale(1); }
       50% { opacity: 1; transform: scale(1.2); }
     }
 
-    /* Enhanced HUD scan line effect */
+    /* HUD scan line effect */
     ha-card::after {
       content: '';
       position: absolute;
@@ -722,34 +351,34 @@ stark:
       left: -100%;
       width: 100%;
       height: 2px;
-      background: linear-gradient(90deg, 
-        transparent 0%, 
-        var(--glow-blue) 50%, 
+      background: linear-gradient(90deg,
+        transparent 0%,
+        var(--glow-blue) 50%,
         transparent 100%);
-      animation: scan-line 3s linear infinite;
+      animation: scanLine 3s linear infinite;
     }
-    
-    @keyframes scan-line {
+
+    @keyframes scanLine {
       0% { left: -100%; }
       100% { left: 100%; }
     }
 
+    /* Card hover effect */
     ha-card:hover {
-      border-color: var(--stark-gold);
+      border-color: var(--jarvis-accent);
       box-shadow: 
-        0 0 40px 8px var(--glow-blue), 
-        0 4px 16px var(--stark-gold),
+        0 0 40px 8px var(--glow-blue),
+        0 4px 16px var(--jarvis-accent),
         inset 0 1px 0 rgba(251, 202, 3, 0.3);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       transform: translateY(-2px);
     }
 
-    /* Enhanced heading styles */
+    /* Heading cards */
     ha-card.type-heading {
       text-transform: uppercase;
       letter-spacing: 3px;
-      color: var(--stark-gold);
-      font-family: var(--primary-font-family);
+      color: var(--jarvis-accent);
+      font-family: var(--heading-font-family);
       font-weight: 700;
       font-size: 1.3em;
       padding: 16px;
@@ -757,74 +386,152 @@ stark:
         0 0 10px var(--glow-gold),
         0 0 20px var(--glow-gold),
         0 0 30px var(--glow-gold);
-      background: linear-gradient(135deg, 
-        rgba(251, 202, 3, 0.1) 0%, 
+      background: linear-gradient(135deg,
+        rgba(251, 202, 3, 0.1) 0%,
         transparent 100%);
+      border: 2px solid var(--jarvis-border);
     }
 
     ha-card.type-heading div.content p {
-      color: var(--arc-reactor-blue);
+      color: var(--jarvis-primary);
       font-weight: 600;
       text-shadow: 0 0 8px var(--glow-blue);
     }
 
+    /* Card content z-index */
     ha-card > * {
       z-index: 2;
+      position: relative;
+    }
+
+    /* Status indicators */
+    .status-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--status-inactive);
+      display: inline-block;
+    }
+
+    .status-dot.active {
+      background: var(--jarvis-accent);
+      box-shadow: 0 0 8px var(--glow-gold);
+      animation: pulseDot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* Buttons */
+    mwc-button, ha-mwc-button, paper-button {
+      font-family: var(--heading-font-family) !important;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      background: transparent;
+      border: 2px solid var(--jarvis-primary);
+      color: var(--jarvis-primary);
+    }
+
+    mwc-button:hover, ha-mwc-button:hover, paper-button:hover {
+      background: rgba(103, 199, 235, 0.1);
+      box-shadow: 0 0 12px var(--glow-blue);
+      transform: translateY(-1px);
+    }
+
+    /* Switches */
+    ha-switch .mdc-switch__thumb {
+      background: var(--jarvis-accent) !important;
+      box-shadow: 0 0 8px var(--glow-gold);
+    }
+
+    ha-switch .mdc-switch--checked .mdc-switch__thumb {
+      background: var(--jarvis-primary) !important;
+      box-shadow: 0 0 12px var(--glow-blue);
+    }
+
+    /* Inputs */
+    ha-textfield, paper-input {
+      --mdc-text-field-fill-color: rgba(26, 35, 50, 0.6);
+      --mdc-text-field-ink-color: var(--jarvis-primary);
+      --mdc-text-field-label-ink-color: var(--jarvis-secondary);
+    }
+
+    ha-textfield ha-icon,
+    paper-input ha-icon {
+      color: var(--jarvis-primary);
+      filter: drop-shadow(0 0 3px var(--glow-blue));
     }
 
   card-mod-sidebar: |
-    /* Enhanced sidebar with HUD aesthetic */
+    /* Sidebar title */
     .menu .title {
-      color: var(--arc-reactor-blue);
-      font-family: var(--primary-font-family);
+      color: var(--jarvis-primary);
+      font-family: var(--heading-font-family);
       font-weight: 700;
       font-size: 1.1em;
       margin-top: 8px;
       text-shadow: 
-        0 0 10px var(--glow-blue), 
+        0 0 10px var(--glow-blue),
         0 0 20px var(--glow-blue),
         0 0 30px var(--glow-blue);
       text-transform: uppercase;
       letter-spacing: 3px;
-      animation: glow-pulse 3s ease-in-out infinite;
-    }
-    
-    @keyframes glow-pulse {
-      0%, 100% { text-shadow: 0 0 10px var(--glow-blue), 0 0 20px var(--glow-blue); }
-      50% { text-shadow: 0 0 15px var(--glow-blue), 0 0 30px var(--glow-blue), 0 0 40px var(--glow-blue); }
+      animation: glowPulse 3s ease-in-out infinite;
     }
 
+    @keyframes glowPulse {
+      0%, 100% { 
+        text-shadow: 
+          0 0 10px var(--glow-blue), 
+          0 0 20px var(--glow-blue); 
+      }
+      50% { 
+        text-shadow: 
+          0 0 15px var(--glow-blue), 
+          0 0 30px var(--glow-blue), 
+          0 0 40px var(--glow-blue); 
+      }
+    }
+
+    /* Sidebar icons */
     .menu ha-icon-button {
-      color: var(--stark-gold) !important;
+      color: var(--jarvis-accent) !important;
       filter: drop-shadow(0 0 8px var(--glow-gold));
       transition: all 0.3s ease;
     }
-    
+
     .menu ha-icon-button:hover {
       filter: drop-shadow(0 0 12px var(--glow-gold)) drop-shadow(0 0 20px var(--glow-gold));
       transform: scale(1.1);
     }
 
-    /* Enhanced menu items with targeting reticle style */
+    /* Menu items with targeting reticle style */
     paper-icon-item {
-      background: linear-gradient(135deg, 
-        rgba(244, 67, 54, 0.8) 0%, 
+      background: linear-gradient(135deg,
+        rgba(244, 67, 54, 0.8) 0%,
         rgba(211, 47, 47, 0.9) 100%);
+      backdrop-filter: blur(10px);
       border-radius: 8px !important;
-      border: 2px solid var(--arc-reactor-blue);
+      border: 2px solid var(--jarvis-border);
       box-shadow: 
         0 0 15px var(--glow-blue),
         inset 0 1px 0 rgba(103, 199, 235, 0.3);
-      color: var(--stark-gold);
-      font-family: var(--primary-font-family);
+      color: var(--jarvis-accent);
+      font-family: var(--body-font-family);
       font-weight: 600;
       margin: 4px 8px;
       position: relative;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       overflow: hidden;
     }
-    
-    /* Targeting reticle corner indicators */
+
+    /* Targeting brackets */
     paper-icon-item::before {
       content: '';
       position: absolute;
@@ -832,11 +539,11 @@ stark:
       left: 4px;
       width: 12px;
       height: 12px;
-      border-top: 2px solid var(--arc-reactor-blue);
-      border-left: 2px solid var(--arc-reactor-blue);
+      border-top: 2px solid var(--jarvis-primary);
+      border-left: 2px solid var(--jarvis-primary);
       transition: all 0.3s ease;
     }
-    
+
     paper-icon-item::after {
       content: '';
       position: absolute;
@@ -844,34 +551,34 @@ stark:
       right: 4px;
       width: 12px;
       height: 12px;
-      border-bottom: 2px solid var(--arc-reactor-blue);
-      border-right: 2px solid var(--arc-reactor-blue);
+      border-bottom: 2px solid var(--jarvis-primary);
+      border-right: 2px solid var(--jarvis-primary);
       transition: all 0.3s ease;
     }
 
     paper-icon-item:hover, a[aria-selected=true] paper-icon-item {
-      background: linear-gradient(135deg, 
-        rgba(103, 199, 235, 0.9) 0%, 
+      background: linear-gradient(135deg,
+        rgba(103, 199, 235, 0.9) 0%,
         rgba(79, 195, 247, 1) 100%);
-      color: var(--stark-dark);
-      border-color: var(--stark-gold);
+      color: var(--jarvis-dark);
+      border-color: var(--jarvis-accent);
       box-shadow: 
-        0 0 25px var(--glow-blue), 
-        0 0 15px var(--stark-gold),
+        0 0 25px var(--glow-blue),
+        0 0 15px var(--jarvis-accent),
         inset 0 1px 0 rgba(251, 202, 3, 0.4);
       transform: translateX(4px) scale(1.02);
     }
-    
-    paper-icon-item:hover::before, 
+
+    paper-icon-item:hover::before,
     a[aria-selected=true] paper-icon-item::before {
-      border-color: var(--stark-gold);
+      border-color: var(--jarvis-accent);
       width: 16px;
       height: 16px;
     }
-    
-    paper-icon-item:hover::after, 
+
+    paper-icon-item:hover::after,
     a[aria-selected=true] paper-icon-item::after {
-      border-color: var(--stark-gold);
+      border-color: var(--jarvis-accent);
       width: 16px;
       height: 16px;
     }
@@ -883,61 +590,41 @@ stark:
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     }
 
-    /* Enhanced tooltips */
-    div.tooltip {
-      color: var(--stark-dark);
-      background: linear-gradient(135deg, 
-        var(--arc-reactor-blue) 0%, 
-        var(--hud-primary-blue) 100%);
-      border: 2px solid var(--stark-gold);
-      border-radius: 6px;
-      box-shadow: 
-        0 0 15px var(--glow-blue),
-        0 4px 8px rgba(0, 0, 0, 0.3);
-      font-family: var(--primary-font-family);
-      font-weight: 600;
-      padding: 8px 12px;
+    /* Iconography */
+    ha-icon, mdi, iron-icon, mat-icon, .material-icons {
+      filter: drop-shadow(0 0 4px var(--jarvis-primary));
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* IRON MAN / JARVIS ICONOGRAPHY ENHANCEMENTS */
-    
-    /* Enhanced icon styling for HUD aesthetic */
-    ha-icon, mdi, iron-icon, mat-icon, .material-icons {
-      filter: drop-shadow(0 0 4px var(--arc-reactor-blue));
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      font-variation-settings: 'wght' 400, 'opsz' 24;
-    }
-    
-    /* Navigation icons with JARVIS styling */
     app-toolbar ha-icon,
     app-header ha-icon {
-      color: var(--stark-gold) !important;
+      color: var(--jarvis-accent) !important;
       filter: drop-shadow(0 0 6px var(--glow-gold)) drop-shadow(0 0 12px var(--glow-gold));
       transition: all 0.3s ease;
     }
-    
+
     app-toolbar ha-icon:hover,
     app-header ha-icon:hover {
-      color: var(--stark-white) !important;
+      color: var(--jarvis-text) !important;
       filter: drop-shadow(0 0 8px var(--glow-blue)) drop-shadow(0 0 16px var(--glow-blue));
       transform: scale(1.1);
     }
-    
+
     /* Sidebar icons with targeting system styling */
     .menu ha-icon,
     paper-icon-item ha-icon {
       position: relative;
-      filter: drop-shadow(0 0 4px var(--arc-reactor-blue));
+      filter: drop-shadow(0 0 4px var(--jarvis-primary));
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
+
     .menu ha-icon:hover,
     paper-icon-item:hover ha-icon,
     a[aria-selected="true"] paper-icon-item ha-icon {
       filter: drop-shadow(0 0 6px var(--glow-blue)) drop-shadow(0 0 12px var(--glow-blue));
       transform: scale(1.05);
     }
-    
+
     /* Add targeting brackets to active sidebar icons */
     a[aria-selected="true"] paper-icon-item ha-icon::before {
       content: '';
@@ -946,13 +633,13 @@ stark:
       left: -4px;
       right: -4px;
       bottom: -4px;
-      border: 1px solid var(--stark-gold);
+      border: 1px solid var(--jarvis-accent);
       border-radius: 2px;
       opacity: 0.6;
-      animation: target-pulse 2s ease-in-out infinite;
+      animation: targetPulse 2s ease-in-out infinite;
     }
-    
-    @keyframes target-pulse {
+
+    @keyframes targetPulse {
       0%, 100% { 
         transform: scale(1); 
         opacity: 0.6; 
@@ -962,133 +649,100 @@ stark:
         opacity: 1; 
       }
     }
-    
-    /* Card icons with arc reactor styling */
-    ha-card ha-icon {
-      filter: drop-shadow(0 0 3px var(--arc-reactor-blue));
-      transition: all 0.2s ease;
-    }
-    
-    ha-card:hover ha-icon {
-      filter: drop-shadow(0 0 6px var(--glow-blue));
-      color: var(--glow-blue);
-    }
-    
-    /* Status icons with state-aware coloring */
+
+    /* State-aware icon coloring */
     ha-icon[icon*="lightbulb"]:not([style*="color"]) {
-      color: var(--stark-gold);
+      color: var(--jarvis-accent);
       filter: drop-shadow(0 0 4px var(--glow-gold));
     }
-    
+
     ha-icon[icon*="power"]:not([style*="color"]) {
-      color: var(--arc-reactor-blue);
+      color: var(--jarvis-primary);
       filter: drop-shadow(0 0 4px var(--glow-blue));
     }
-    
+
     ha-icon[icon*="alert"]:not([style*="color"]),
     ha-icon[icon*="warning"]:not([style*="color"]) {
       color: var(--targeting-orange);
       filter: drop-shadow(0 0 4px var(--targeting-orange));
     }
-    
+
     ha-icon[icon*="error"]:not([style*="color"]) {
-      color: var(--danger-red);
+      color: var(--status-disconnected);
       filter: drop-shadow(0 0 4px var(--glow-red));
     }
-    
-    /* Buttons with enhanced JARVIS styling */
-    mwc-button, ha-mwc-button, paper-button {
-      font-family: var(--primary-font-family) !important;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border-radius: 6px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    mwc-button:hover, ha-mwc-button:hover, paper-button:hover {
-      box-shadow: 0 0 12px var(--glow-blue);
-      transform: translateY(-1px);
-    }
-    
-    /* Enhanced switch styling */
-    ha-switch .mdc-switch__thumb {
-      background: var(--stark-gold) !important;
-      box-shadow: 0 0 8px var(--glow-gold);
-    }
-    
-    ha-switch .mdc-switch--checked .mdc-switch__thumb {
-      background: var(--arc-reactor-blue) !important;
-      box-shadow: 0 0 12px var(--glow-blue);
-    }
-    
-    /* Enhanced input field icons */
-    ha-textfield ha-icon,
-    paper-input ha-icon {
-      color: var(--arc-reactor-blue);
-      filter: drop-shadow(0 0 3px var(--glow-blue));
-    }
-    
-    /* Notification icons with priority styling */
-    .notification ha-icon {
-      animation: notification-pulse 1.5s ease-in-out infinite;
-    }
-    
-    @keyframes notification-pulse {
-      0%, 100% { 
-        filter: drop-shadow(0 0 4px var(--arc-reactor-blue));
-        opacity: 0.8;
-      }
-      50% { 
-        filter: drop-shadow(0 0 8px var(--glow-blue));
-        opacity: 1;
-      }
-    }
-    
-    /* More Info dialog icons */
-    more-info-dialog ha-icon {
-      filter: drop-shadow(0 0 3px var(--arc-reactor-blue));
+
+    /* Card icons */
+    ha-card ha-icon {
+      filter: drop-shadow(0 0 3px var(--jarvis-primary));
       transition: all 0.2s ease;
     }
-    
-    /* Entity icons with state-based coloring */
-    .entity-row ha-icon {
-      filter: drop-shadow(0 0 2px var(--arc-reactor-blue));
+
+    ha-card:hover ha-icon {
+      filter: drop-shadow(0 0 6px var(--glow-blue));
+      color: var(--glow-blue);
     }
-    
+
+    /* Notification icons */
+    .notification ha-icon {
+      animation: notificationPulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes notificationPulse {
+      0%, 100% { 
+        filter: drop-shadow(0 0 4px var(--jarvis-primary)); 
+        opacity: 0.8; 
+      }
+      50% { 
+        filter: drop-shadow(0 0 8px var(--glow-blue)); 
+        opacity: 1; 
+      }
+    }
+
+    /* More Info dialog icons */
+    more-info-dialog ha-icon {
+      filter: drop-shadow(0 0 3px var(--jarvis-primary));
+      transition: all 0.2s ease;
+    }
+
+    /* Entity row icons */
+    .entity-row ha-icon {
+      filter: drop-shadow(0 0 2px var(--jarvis-primary));
+    }
+
     .entity-row:hover ha-icon {
       filter: drop-shadow(0 0 4px var(--glow-blue));
       transform: scale(1.05);
     }
-    
-    /* Loading spinners with arc reactor styling */
+
+    /* Spinners */
     paper-spinner-lite {
-      --paper-spinner-color: var(--arc-reactor-blue);
+      --paper-spinner-color: var(--jarvis-primary);
       filter: drop-shadow(0 0 8px var(--glow-blue));
     }
-    
-    /* Enhanced checkbox and radio styling */
+
+    /* Checkboxes and radios */
     ha-checkbox .mdc-checkbox__checkmark,
     ha-radio .mdc-radio__outer-circle {
-      filter: drop-shadow(0 0 4px var(--arc-reactor-blue));
+      filter: drop-shadow(0 0 4px var(--jarvis-primary));
     }
-    
-    /* Special JARVIS-style icons for common functions */
+
+    /* Common icons */
     ha-icon[icon="mdi:home"],
     ha-icon[icon="hass:home"] {
-      filter: drop-shadow(0 0 6px var(--arc-reactor-blue));
+      filter: drop-shadow(0 0 6px var(--jarvis-primary));
     }
-    
+
     ha-icon[icon="mdi:settings"],
     ha-icon[icon="hass:settings"] {
-      filter: drop-shadow(0 0 4px var(--stark-gold));
+      filter: drop-shadow(0 0 4px var(--jarvis-accent));
     }
-    
+
     ha-icon[icon*="climate"],
     ha-icon[icon*="temperature"] {
-      filter: drop-shadow(0 0 4px var(--hud-primary-blue));
+      filter: drop-shadow(0 0 4px var(--jarvis-secondary));
     }
-    
+
     ha-icon[icon*="security"],
     ha-icon[icon*="lock"] {
       filter: drop-shadow(0 0 4px var(--targeting-orange));
