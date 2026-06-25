@@ -1,606 +1,127 @@
 jarvis:
-  # JARVIS Theme Color Variables - Based on Documentation
-  # Primary Colors
-  jarvis-primary: "#00d4ff"        # Main cyan accent color
-  jarvis-secondary: "#0099cc"       # Secondary blue
-  jarvis-accent: "#00ffff"          # Bright cyan accent
-  jarvis-dark: "#0a0e27"            # Dark blue background
-  jarvis-darker: "#050510"          # Darkest background
-  jarvis-border: "rgba(0, 212, 255, 0.3)"  # Semi-transparent cyan borders
-  jarvis-glow: "rgba(0, 212, 255, 0.5)"    # Glow effect color
-  jarvis-text: "#e0f7ff"            # Primary text color (light cyan)
-  jarvis-text-dim: "#8bb3c4"        # Dimmed/secondary text
+  # ============================================================
+  # LAYER 1 — DESIGN TOKENS (the ONLY place raw colors live)
+  # Retune the whole theme by editing these.
+  # ============================================================
+  # Cyan identity
+  j-cyan: "#3FC7FF"          # primary arc-reactor cyan
+  j-cyan-bright: "#8FE6FF"   # active/hover highlight
+  j-cyan-deep: "#1B6E94"     # muted cyan for dim accents
+  # Accent / status
+  j-gold: "#FFC107"          # alerts / warnings only
+  j-red: "#FF4B3E"           # errors / critical
+  j-green: "#3DE08C"         # success / on-confirmed
+  j-inactive: "#5C6B78"      # disabled / off
+  # Surfaces (darkest -> raised)
+  j-void: "#06090F"          # page + chrome background
+  j-surface: "#0D1422"       # cards (SOLID)
+  j-surface-raised: "#131D31" # dialogs/popups (SOLID, sits "above" cards)
+  # Lines / glow
+  j-line: "rgba(63, 199, 255, 0.28)"      # hairline borders
+  j-line-strong: "rgba(63, 199, 255, 0.55)"
+  j-glow: "rgba(63, 199, 255, 0.45)"
+  j-scrim: "rgba(2, 6, 12, 0.72)"         # behind dialogs
+  # Text
+  j-text: "#EAF4FF"
+  j-text-dim: "#9FB6C8"
+  # Type
+  j-font: "'Chakra Petch', 'Rajdhani', 'Helvetica Neue', Arial, sans-serif"
+  j-font-mono: "'JetBrains Mono', 'SFMono-Regular', Consolas, monospace"
 
-  # Status Colors
-  status-connected: "#00d4ff"       # Connected/Ready (Jarvis cyan)
-  status-connecting: "#ffaa00"      # Connecting (Orange)
-  status-disconnected: "#ff4444"    # Disconnected/Error (Red)
-  status-inactive: "#666"           # Inactive (Gray)
+  # ============================================================
+  # LAYER 2 — HA VARIABLE BINDINGS (no raw colors below this line)
+  # ============================================================
+  # Core
+  primary-color: "var(--j-cyan)"
+  accent-color: "var(--j-cyan)"
+  dark-primary-color: "var(--j-cyan-deep)"
+  light-primary-color: "var(--j-cyan-bright)"
+  primary-background-color: "var(--j-void)"
+  secondary-background-color: "var(--j-surface)"
+  divider-color: "var(--j-line)"
+  disabled-color: "var(--j-inactive)"
+  scrollbar-thumb-color: "var(--j-cyan-deep)"
 
-  # Legacy compatibility mappings
-  arc-reactor-blue: "var(--jarvis-primary)"
-  hud-primary-blue: "var(--jarvis-secondary)"
-  deep-arc-blue: "var(--jarvis-secondary)"
-  cyan-color: "var(--jarvis-accent)"
-  ice-accent-blue: "var(--jarvis-accent)"
-  neon-blue: "var(--jarvis-primary)"
-  deep-neon-blue: "var(--jarvis-secondary)"
-  cobalt-blue: "var(--jarvis-secondary)"
-  stark-dark: "var(--jarvis-dark)"
-  hud-dark: "var(--jarvis-dark)"
-  deep-space: "var(--jarvis-darker)"
-  panel-dark: "rgba(10, 14, 39, 0.6)"
-  nav-dark: "var(--jarvis-dark)"
-  nav-blue: "var(--jarvis-dark)"
-  stark-grey: "#263238"
-  metal-grey: "#37474F"
-  suit-silver: "#90A4AE"
-  stark-white: "var(--jarvis-text)"
-  glow-blue: "var(--jarvis-primary)"
-  glow-cyan: "var(--jarvis-accent)"
-  glow-ice: "var(--jarvis-accent)"
-  stark-gold: "var(--jarvis-accent)"
-  targeting-orange: "var(--status-connecting)"
-  warning-amber: "var(--status-connecting)"
-  alert-red: "var(--status-disconnected)"
-  critical-red: "var(--status-disconnected)"
-  danger-red: "var(--status-disconnected)"
-  glow-gold: "var(--jarvis-glow)"
-  glow-red: "var(--status-disconnected)"
+  # Text
+  primary-text-color: "var(--j-text)"
+  secondary-text-color: "var(--j-text-dim)"
+  text-primary-color: "var(--j-text)"
+  disabled-text-color: "var(--j-inactive)"
 
-  # Typography - Orbitron + Rajdhani
-  primary-font-family: "'Orbitron', 'Rajdhani', 'Helvetica Neue', 'Arial', sans-serif"
-  heading-font-family: "'Orbitron', 'Helvetica Neue', 'Arial', sans-serif"
-  body-font-family: "'Rajdhani', 'Helvetica Neue', 'Arial', sans-serif"
+  # Cards (SOLID surface)
+  card-background-color: "var(--j-surface)"
+  ha-card-background: "var(--j-surface)"
+  ha-card-border-radius: "12px"
+  ha-card-border-width: "1px"
+  ha-card-border-color: "var(--j-line)"
 
-  # Background - Gradient matching documentation
-  background-image: "linear-gradient(135deg, var(--jarvis-darker) 0%, var(--jarvis-dark) 100%)"
-  lovelace-background: "var(--background-image)"
+  # Dialogs / popups — THE POPUP FIX (solid surface + dimmed scrim)
+  ha-dialog-surface-background: "var(--j-surface-raised)"
+  ha-dialog-scrim-color: "var(--j-scrim)"
+  mdc-dialog-scrim-color: "var(--j-scrim)"
+  ha-dialog-surface-position: "fixed"
+  dialog-backdrop-filter: "blur(2px)"
 
-  # Home Assistant theme variables
-  accent-color: "var(--jarvis-primary)"
-  app-header-background-color: "rgba(10, 14, 39, 0.6)"
-  app-header-edit-background-color: "var(--jarvis-dark)"
-  app-header-edit-text-color: "var(--jarvis-text)"
-  app-header-text-color: "var(--jarvis-primary)"
-  app-header-selection-bar-color: "var(--jarvis-accent)"
-  card-background-color: "rgba(10, 14, 39, 0.6)"
-  chip-background-color: "var(--jarvis-dark)"
-  dark-primary-background-color: "var(--jarvis-dark)"
-  data-table-background-color: "rgba(10, 14, 39, 0.6)"
-  disabled-color: "var(--status-inactive)"
-  disabled-text-color: "var(--status-inactive)"
-  divider-color: "var(--jarvis-border)"
-  error-color: "var(--status-disconnected)"
-  ha-card-background: "rgba(10, 14, 39, 0.6)"
-  icon-color: "var(--jarvis-primary)"
-  info-color: "var(--jarvis-secondary)"
-  input-dropdown-icon-color: "var(--jarvis-accent)"
-  label-badge-background-color: "var(--jarvis-secondary)"
-  label-badge-color: "var(--jarvis-text)"
-  light-theme-background-color: "var(--jarvis-dark)"
-  light-theme-disabled-color: "var(--jarvis-text-dim)"
-  light-theme-secondary-background-color: "rgba(10, 14, 39, 0.6)"
-  light-theme-secondary-color: "var(--jarvis-secondary)"
-  light-theme-color: "var(--jarvis-primary)"
-  material-background-color: "var(--jarvis-dark)"
-  material-body-color: "var(--jarvis-primary)"
-  material-disabled-color: "var(--status-inactive)"
-  material-primary-background-color: "var(--jarvis-dark)"
-  material-primary-color: "var(--jarvis-primary)"
-  material-secondary-background-color: "rgba(10, 14, 39, 0.6)"
-  material-secondary-color: "var(--jarvis-secondary)"
-  mdc-button-raised-box-shadow-hover: "0 0 20px rgba(0, 212, 255, 0.1), inset 0 0 20px rgba(0, 212, 255, 0.05)"
-  mdc-checkbox-unchecked-color: "var(--jarvis-primary)"
-  mdc-ripple-color: "var(--jarvis-primary)"
-  mdc-select-disabled-dropdown-icon-color: "var(--status-inactive)"
-  mdc-select-disabled-fill-color: "var(--jarvis-dark)"
-  mdc-select-disabled-ink-color: "var(--status-inactive)"
-  mdc-select-dropdown-icon-color: "var(--jarvis-accent)"
-  mdc-select-fill-color: "rgba(10, 14, 39, 0.6)"
-  mdc-select-ink-color: "var(--jarvis-primary)"
-  mdc-select-label-ink-color: "var(--jarvis-secondary)"
-  mdc-text-field-fill-color: "rgba(10, 14, 39, 0.6)"
-  mdc-text-field-ink-color: "var(--jarvis-primary)"
-  mdc-text-field-label-ink-color: "var(--jarvis-secondary)"
-  mdc-theme-on-primary: "var(--jarvis-dark)"
-  mdc-theme-on-secondary: "var(--jarvis-dark)"
-  mdc-theme-on-surface: "var(--jarvis-accent)"
-  mdc-theme-primary: "var(--jarvis-primary)"
-  mdc-theme-secondary: "var(--jarvis-secondary)"
-  mdc-theme-surface: "rgba(10, 14, 39, 0.6)"
-  mdc-theme-background: "var(--jarvis-dark)"
-  mdc-theme-text-primary-on-background: "var(--jarvis-primary)"
-  mush-rgb-state-entity: "var(--jarvis-primary)"
-  paper-font-body1_-_font-family: "var(--body-font-family)"
-  paper-font-body2_-_font-family: "var(--body-font-family)"
-  paper-font-button_-_font-family: "var(--heading-font-family)"
-  paper-font-caption_-_font-family: "var(--body-font-family)"
-  paper-font-code1_-_font-family: "var(--primary-font-family)"
-  paper-font-code2_-_font-family: "var(--primary-font-family)"
-  paper-font-common-base_-_font-family: "var(--primary-font-family)"
-  paper-font-common-code_-_font-family: "var(--primary-font-family)"
-  paper-font-display1_-_font-family: "var(--heading-font-family)"
-  paper-font-display2_-_font-family: "var(--heading-font-family)"
-  paper-font-display3_-_font-family: "var(--heading-font-family)"
-  paper-font-display4_-_font-family: "var(--heading-font-family)"
-  paper-font-headline_-_font-family: "var(--heading-font-family)"
-  paper-font-menu_-_font-family: "var(--primary-font-family)"
-  paper-font-subhead_-_font-family: "var(--primary-font-family)"
-  paper-font-title_-_font-family: "var(--heading-font-family)"
-  paper-input-container-color: "var(--jarvis-primary)"
-  paper-input-container-input-color: "var(--jarvis-text)"
-  paper-input-container-focus-color: "var(--jarvis-glow)"
-  paper-input-container-shared-input-style_-_color: "var(--jarvis-text)"
-  paper-input-container-shared-input-style_-_font-family: "var(--body-font-family)"
-  paper-item-icon-active-color: "var(--jarvis-accent)"
-  paper-item-icon-color: "var(--jarvis-primary)"
-  paper-item-selected: "var(--jarvis-glow)"
-  paper-listbox-background-color: "rgba(10, 14, 39, 0.6)"
-  paper-slider-active-color: "var(--jarvis-primary)"
-  paper-slider-container-color: "var(--jarvis-dark)"
-  paper-slider-knob-color: "var(--jarvis-accent)"
-  paper-slider-knob-start-color: "var(--jarvis-primary)"
-  paper-slider-pin-color: "var(--jarvis-accent)"
-  paper-slider-pin-start-color: "var(--jarvis-glow)"
-  paper-slider-secondary-color: "var(--jarvis-secondary)"
-  paper-tab-ink: "var(--jarvis-glow)"
-  primary-color: "var(--jarvis-primary)"
-  primary-background-color: "var(--jarvis-dark)"
-  primary-text-color: "var(--jarvis-text)"
-  rgb-accent-color: "var(--jarvis-accent)"
-  rgb-card-background-color: "rgba(10, 14, 39, 0.6)"
-  rgb-primary-background-color: "var(--jarvis-dark)"
-  rgb-primary-color: "var(--jarvis-primary)"
-  rgb-secondary-color: "var(--jarvis-primary)"
-  rgb-text-primary-background-color: "var(--jarvis-dark)"
-  secondary-background-color: "rgba(10, 14, 39, 0.6)"
-  secondary-color: "var(--jarvis-primary)"
-  secondary-text-color: "var(--jarvis-secondary)"
-  sidebar-background-color: "var(--jarvis-dark)"
-  sidebar-icon-color: "var(--jarvis-accent)"
-  sidebar-selected-background-color: "rgba(0, 212, 255, 0.15)"
-  sidebar-selected-icon-color: "var(--jarvis-glow)"
-  sidebar-selected-color: "var(--jarvis-primary)"
-  sidebar-selected-text-color: "var(--jarvis-text)"
-  sidebar-color: "var(--jarvis-secondary)"
-  slider-color: "var(--jarvis-primary)"
-  slider-secondary-color: "var(--jarvis-accent)"
-  slider-track-color: "var(--jarvis-dark)"
-  state-switch-on-color: "var(--jarvis-glow)"
-  state-switch-active-color: "var(--jarvis-primary)"
-  state-switch-inactive-color: "var(--status-inactive)"
-  state-active-color: "var(--jarvis-primary)"
-  state-color: "var(--jarvis-secondary)"
-  state-icon-active-color: "var(--jarvis-accent)"
-  state-icon-color: "var(--jarvis-primary)"
-  success-color: "var(--status-connected)"
-  switch-checked-button-color: "var(--jarvis-accent)"
-  switch-checked-color: "var(--jarvis-glow)"
-  switch-checked-track-color: "var(--jarvis-primary)"
-  switch-unchecked-button-color: "var(--status-inactive)"
-  switch-unchecked-color: "var(--jarvis-dark)"
-  switch-unchecked-track-color: "rgba(10, 14, 39, 0.6)"
-  table-row-alternative-background-color: "rgba(10, 14, 39, 0.6)"
-  table-row-background-color: "var(--jarvis-dark)"
-  text-accent-color: "var(--jarvis-accent)"
-  text-light-primary-background-color: "var(--jarvis-dark)"
-  text-primary-color: "var(--jarvis-text)"
-  text-primary-background-color: "rgba(10, 14, 39, 0.6)"
-  warning-color: "var(--status-connecting)"
+  # Status / state
+  state-icon-color: "var(--j-cyan)"
+  state-icon-active-color: "var(--j-cyan-bright)"
+  state-active-color: "var(--j-cyan-bright)"
+  paper-item-icon-active-color: "var(--j-cyan-bright)"
+  paper-item-icon-color: "var(--j-cyan)"
+  success-color: "var(--j-green)"
+  warning-color: "var(--j-gold)"
+  error-color: "var(--j-red)"
+  info-color: "var(--j-cyan)"
 
-  # card-mod
+  # Sidebar
+  sidebar-background-color: "var(--j-void)"
+  sidebar-icon-color: "var(--j-text-dim)"
+  sidebar-text-color: "var(--j-text-dim)"
+  sidebar-selected-icon-color: "var(--j-cyan-bright)"
+  sidebar-selected-text-color: "var(--j-text)"
+
+  # Header
+  app-header-background-color: "var(--j-void)"
+  app-header-text-color: "var(--j-text)"
+  app-header-selection-bar-color: "var(--j-cyan)"
+
+  # Toggles / switches / sliders
+  switch-checked-color: "var(--j-cyan)"
+  switch-checked-button-color: "var(--j-cyan-bright)"
+  switch-checked-track-color: "var(--j-cyan-deep)"
+  switch-unchecked-button-color: "var(--j-inactive)"
+  switch-unchecked-track-color: "var(--j-surface)"
+  paper-slider-active-color: "var(--j-cyan)"
+  paper-slider-knob-color: "var(--j-cyan-bright)"
+  paper-slider-pin-color: "var(--j-cyan)"
+  slider-color: "var(--j-cyan)"
+  slider-track-color: "var(--j-surface)"
+
+  # Inputs
+  input-fill-color: "var(--j-surface)"
+  input-ink-color: "var(--j-text)"
+  input-label-ink-color: "var(--j-text-dim)"
+  input-idle-line-color: "var(--j-line)"
+  input-hover-line-color: "var(--j-cyan)"
+  mdc-text-field-fill-color: "var(--j-surface)"
+  mdc-text-field-ink-color: "var(--j-text)"
+  mdc-select-fill-color: "var(--j-surface)"
+
+  # Material theme glue
+  mdc-theme-primary: "var(--j-cyan)"
+  mdc-theme-secondary: "var(--j-gold)"
+  mdc-theme-surface: "var(--j-surface)"
+  mdc-theme-background: "var(--j-void)"
+  mdc-theme-on-surface: "var(--j-text)"
+  mdc-theme-on-primary: "var(--j-void)"
+
+  # Typography binding
+  paper-font-common-base_-_font-family: "var(--j-font)"
+  paper-font-body1_-_font-family: "var(--j-font)"
+  paper-font-headline_-_font-family: "var(--j-font)"
+  paper-font-title_-_font-family: "var(--j-font)"
+  ha-font-family-body: "var(--j-font)"
+  ha-font-family-heading: "var(--j-font)"
+
+  # card-mod activation
   card-mod-theme: jarvis
-
-  card-mod-root: |
-    /* Import JARVIS Theme fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
-
-    /* Base body styles */
-    body {
-      font-family: var(--body-font-family);
-      color: var(--jarvis-text);
-      background: var(--background-image);
-      overflow: hidden;
-      height: 100vh;
-    }
-
-    /* Animated grid overlay - matching documentation */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
-      background-size: 50px 50px;
-      pointer-events: none;
-      z-index: -1;
-      animation: gridMove 20s linear infinite;
-      will-change: transform;
-    }
-
-    @keyframes gridMove {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(50px, 50px); }
-    }
-
-    /* App toolbar - glassmorphism header */
-    app-toolbar {
-      font-family: var(--heading-font-family);
-      background: rgba(10, 14, 39, 0.6);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--jarvis-border);
-      border-radius: 0 0 12px 12px;
-      box-shadow: 
-        0 0 20px rgba(0, 212, 255, 0.1),
-        inset 0 0 20px rgba(0, 212, 255, 0.05);
-      padding: 20px 30px;
-      text-shadow: 
-        0 0 10px var(--jarvis-glow),
-        0 0 20px var(--jarvis-glow),
-        0 0 30px var(--jarvis-glow);
-    }
-
-    /* Scrollbar styling */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: rgba(0, 212, 255, 0.1);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: var(--jarvis-primary);
-      border-radius: 3px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--jarvis-accent);
-    }
-
-    /* Reduced motion support */
-    @media (prefers-reduced-motion: reduce) {
-      body::before {
-        animation: none !important;
-      }
-      * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-
-  card-mod-card: |
-    /* Card base - glassmorphism effect */
-    ha-card {
-      border-radius: 12px;
-      border: 1px solid var(--jarvis-border);
-      box-shadow: 
-        0 0 20px rgba(0, 212, 255, 0.1),
-        inset 0 0 20px rgba(0, 212, 255, 0.05);
-      background: rgba(10, 14, 39, 0.6);
-      backdrop-filter: blur(10px);
-      font-family: var(--body-font-family);
-      color: var(--jarvis-text);
-      position: relative;
-      overflow: hidden;
-      padding: 30px;
-      transition: all 0.3s ease;
-    }
-
-    /* Card hover effect */
-    ha-card:hover {
-      border-color: var(--jarvis-accent);
-      box-shadow: 
-        0 0 40px rgba(0, 212, 255, 0.2),
-        inset 0 0 20px rgba(0, 212, 255, 0.1);
-      transform: translateY(-2px);
-    }
-
-    /* Heading cards */
-    ha-card.type-heading {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--jarvis-primary);
-      font-family: var(--heading-font-family);
-      font-weight: 700;
-      font-size: 1.3em;
-      padding: 16px;
-      text-shadow: 
-        0 0 10px var(--jarvis-glow),
-        0 0 20px var(--jarvis-glow),
-        0 0 30px var(--jarvis-glow);
-      background: linear-gradient(135deg,
-        rgba(0, 212, 255, 0.1) 0%,
-        transparent 100%);
-      border: 1px solid var(--jarvis-border);
-    }
-
-    ha-card.type-heading div.content p {
-      color: var(--jarvis-primary);
-      font-weight: 600;
-      text-shadow: 0 0 8px var(--jarvis-glow);
-    }
-
-    /* Card content z-index */
-    ha-card > * {
-      z-index: 2;
-      position: relative;
-    }
-
-    /* Status indicators */
-    .status-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--status-inactive);
-      display: inline-block;
-    }
-
-    .status-dot.active {
-      background: var(--jarvis-accent);
-      box-shadow: 0 0 8px var(--jarvis-glow);
-      animation: pulseDot 2s ease-in-out infinite;
-    }
-
-    @keyframes pulseDot {
-      0%, 100% { opacity: 0.6; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.2); }
-    }
-
-    /* Buttons */
-    mwc-button, ha-mwc-button, paper-button {
-      font-family: var(--heading-font-family) !important;
-      font-weight: 600;
-      font-size: 14px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      background: transparent;
-      border: 2px solid var(--jarvis-primary);
-      color: var(--jarvis-primary);
-    }
-
-    mwc-button:hover, ha-mwc-button:hover, paper-button:hover {
-      background: rgba(0, 212, 255, 0.1);
-      box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
-      transform: translateY(-2px);
-    }
-
-    /* Switches */
-    ha-switch .mdc-switch__thumb {
-      background: var(--jarvis-accent) !important;
-      box-shadow: 0 0 8px var(--jarvis-glow);
-    }
-
-    ha-switch .mdc-switch--checked .mdc-switch__thumb {
-      background: var(--jarvis-primary) !important;
-      box-shadow: 0 0 12px var(--jarvis-glow);
-    }
-
-    /* Inputs */
-    ha-textfield, paper-input {
-      --mdc-text-field-fill-color: rgba(10, 14, 39, 0.6);
-      --mdc-text-field-ink-color: var(--jarvis-primary);
-      --mdc-text-field-label-ink-color: var(--jarvis-secondary);
-    }
-
-    ha-textfield ha-icon,
-    paper-input ha-icon {
-      color: var(--jarvis-primary);
-      filter: drop-shadow(0 0 3px var(--jarvis-glow));
-    }
-
-  card-mod-sidebar: |
-    /* Sidebar title */
-    .menu .title {
-      color: var(--jarvis-primary);
-      font-family: var(--heading-font-family);
-      font-weight: 700;
-      font-size: 1.1em;
-      margin-top: 8px;
-      text-shadow: 
-        0 0 10px var(--jarvis-glow),
-        0 0 20px var(--jarvis-glow),
-        0 0 30px var(--jarvis-glow);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      animation: glowPulse 3s ease-in-out infinite;
-    }
-
-    @keyframes glowPulse {
-      0%, 100% { 
-        text-shadow: 
-          0 0 10px var(--jarvis-glow), 
-          0 0 20px var(--jarvis-glow); 
-      }
-      50% { 
-        text-shadow: 
-          0 0 15px var(--jarvis-glow), 
-          0 0 30px var(--jarvis-glow), 
-          0 0 40px var(--jarvis-glow); 
-      }
-    }
-
-    /* Sidebar icons */
-    .menu ha-icon-button {
-      color: var(--jarvis-accent) !important;
-      filter: drop-shadow(0 0 8px var(--jarvis-glow));
-      transition: all 0.3s ease;
-    }
-
-    .menu ha-icon-button:hover {
-      filter: drop-shadow(0 0 12px var(--jarvis-glow)) drop-shadow(0 0 20px var(--jarvis-glow));
-      transform: scale(1.1);
-    }
-
-    /* Menu items */
-    paper-icon-item {
-      background: rgba(10, 14, 39, 0.6);
-      backdrop-filter: blur(10px);
-      border-radius: 8px !important;
-      border: 1px solid var(--jarvis-border);
-      box-shadow: 
-        0 0 15px rgba(0, 212, 255, 0.1),
-        inset 0 0 20px rgba(0, 212, 255, 0.05);
-      color: var(--jarvis-text);
-      font-family: var(--body-font-family);
-      font-weight: 400;
-      margin: 4px 8px;
-      position: relative;
-      transition: all 0.3s ease;
-      overflow: hidden;
-    }
-
-    paper-icon-item:hover, a[aria-selected=true] paper-icon-item {
-      background: rgba(0, 212, 255, 0.15);
-      border-color: var(--jarvis-accent);
-      box-shadow: 
-        0 0 25px rgba(0, 212, 255, 0.2),
-        inset 0 0 20px rgba(0, 212, 255, 0.1);
-      transform: translateX(4px);
-    }
-
-    paper-icon-item span {
-      font-weight: 500;
-      letter-spacing: 1px;
-    }
-
-    /* Iconography */
-    ha-icon, mdi, iron-icon, mat-icon, .material-icons {
-      filter: drop-shadow(0 0 4px var(--jarvis-primary));
-      transition: all 0.3s ease;
-    }
-
-    app-toolbar ha-icon,
-    app-header ha-icon {
-      color: var(--jarvis-accent) !important;
-      filter: drop-shadow(0 0 6px var(--jarvis-glow)) drop-shadow(0 0 12px var(--jarvis-glow));
-      transition: all 0.3s ease;
-    }
-
-    app-toolbar ha-icon:hover,
-    app-header ha-icon:hover {
-      color: var(--jarvis-text) !important;
-      filter: drop-shadow(0 0 8px var(--jarvis-glow)) drop-shadow(0 0 16px var(--jarvis-glow));
-      transform: scale(1.1);
-    }
-
-    .menu ha-icon,
-    paper-icon-item ha-icon {
-      position: relative;
-      filter: drop-shadow(0 0 4px var(--jarvis-primary));
-      transition: all 0.3s ease;
-    }
-
-    .menu ha-icon:hover,
-    paper-icon-item:hover ha-icon,
-    a[aria-selected="true"] paper-icon-item ha-icon {
-      filter: drop-shadow(0 0 6px var(--jarvis-glow)) drop-shadow(0 0 12px var(--jarvis-glow));
-      transform: scale(1.05);
-    }
-
-    /* State-aware icon coloring */
-    ha-icon[icon*="lightbulb"]:not([style*="color"]) {
-      color: var(--jarvis-accent);
-      filter: drop-shadow(0 0 4px var(--jarvis-glow));
-    }
-
-    ha-icon[icon*="power"]:not([style*="color"]) {
-      color: var(--jarvis-primary);
-      filter: drop-shadow(0 0 4px var(--jarvis-glow));
-    }
-
-    ha-icon[icon*="alert"]:not([style*="color"]),
-    ha-icon[icon*="warning"]:not([style*="color"]) {
-      color: var(--status-connecting);
-      filter: drop-shadow(0 0 4px var(--status-connecting));
-    }
-
-    ha-icon[icon*="error"]:not([style*="color"]) {
-      color: var(--status-disconnected);
-      filter: drop-shadow(0 0 4px var(--status-disconnected));
-    }
-
-    /* Card icons */
-    ha-card ha-icon {
-      filter: drop-shadow(0 0 3px var(--jarvis-primary));
-      transition: all 0.2s ease;
-    }
-
-    ha-card:hover ha-icon {
-      filter: drop-shadow(0 0 6px var(--jarvis-glow));
-      color: var(--jarvis-glow);
-    }
-
-    /* Notification icons */
-    .notification ha-icon {
-      animation: notificationPulse 1.5s ease-in-out infinite;
-    }
-
-    @keyframes notificationPulse {
-      0%, 100% { 
-        filter: drop-shadow(0 0 4px var(--jarvis-primary)); 
-        opacity: 0.8; 
-      }
-      50% { 
-        filter: drop-shadow(0 0 8px var(--jarvis-glow)); 
-        opacity: 1; 
-      }
-    }
-
-    /* More Info dialog icons */
-    more-info-dialog ha-icon {
-      filter: drop-shadow(0 0 3px var(--jarvis-primary));
-      transition: all 0.2s ease;
-    }
-
-    /* Entity row icons */
-    .entity-row ha-icon {
-      filter: drop-shadow(0 0 2px var(--jarvis-primary));
-    }
-
-    .entity-row:hover ha-icon {
-      filter: drop-shadow(0 0 4px var(--jarvis-glow));
-      transform: scale(1.05);
-    }
-
-    /* Spinners */
-    paper-spinner-lite {
-      --paper-spinner-color: var(--jarvis-primary);
-      filter: drop-shadow(0 0 8px var(--jarvis-glow));
-    }
-
-    /* Checkboxes and radios */
-    ha-checkbox .mdc-checkbox__checkmark,
-    ha-radio .mdc-radio__outer-circle {
-      filter: drop-shadow(0 0 4px var(--jarvis-primary));
-    }
-
-    /* Common icons */
-    ha-icon[icon="mdi:home"],
-    ha-icon[icon="hass:home"] {
-      filter: drop-shadow(0 0 6px var(--jarvis-primary));
-    }
-
-    ha-icon[icon="mdi:settings"],
-    ha-icon[icon="hass:settings"] {
-      filter: drop-shadow(0 0 4px var(--jarvis-accent));
-    }
-
-    ha-icon[icon*="climate"],
-    ha-icon[icon*="temperature"] {
-      filter: drop-shadow(0 0 4px var(--jarvis-secondary));
-    }
-
-    ha-icon[icon*="security"],
-    ha-icon[icon*="lock"] {
-      filter: drop-shadow(0 0 4px var(--jarvis-primary));
-    }
