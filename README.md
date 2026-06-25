@@ -75,6 +75,13 @@ Key tokens:
 | `j-void` | `#06090F` | Page and chrome background |
 | `j-surface` | `#0D1422` | Card surfaces (solid) |
 | `j-surface-raised` | `#131D31` | Dialog/popup surfaces (solid) |
+| `j-line` | `rgba(63,199,255,0.28)` | Hairline card and sidebar borders |
+| `j-line-strong` | `rgba(63,199,255,0.55)` | Reticle corner brackets |
+| `j-glow` | `rgba(63,199,255,0.45)` | Drop-shadow glow on icons and active cards |
+| `j-glow-soft` | `rgba(63,199,255,0.05)` | Ambient arc-reactor glow mid stop |
+| `j-fill-weak` | `rgba(63,199,255,0.08)` | Sidebar hover fill |
+| `j-fill` | `rgba(63,199,255,0.12)` | Sidebar selected fill |
+| `j-scrim` | `rgba(2,6,12,0.72)` | Backdrop behind dialogs |
 | `j-text` | `#EAF4FF` | Primary text |
 | `j-text-dim` | `#9FB6C8` | Secondary / dim text |
 | `j-font` | Chakra Petch stack | UI typeface |

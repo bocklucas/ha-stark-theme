@@ -21,6 +21,9 @@ jarvis:
   j-line: "rgba(63, 199, 255, 0.28)"      # hairline borders
   j-line-strong: "rgba(63, 199, 255, 0.55)"
   j-glow: "rgba(63, 199, 255, 0.45)"
+  j-glow-soft: "rgba(63, 199, 255, 0.05)"  # ambient glow mid stop
+  j-fill-weak: "rgba(63, 199, 255, 0.08)"  # hover fill
+  j-fill: "rgba(63, 199, 255, 0.12)"      # selected fill
   j-scrim: "rgba(2, 6, 12, 0.72)"         # behind dialogs
   # Text
   j-text: "#EAF4FF"
@@ -61,7 +64,11 @@ jarvis:
   ha-dialog-scrim-color: "var(--j-scrim)"
   mdc-dialog-scrim-color: "var(--j-scrim)"
   ha-dialog-surface-position: "fixed"
-  dialog-backdrop-filter: "blur(2px)"
+  ha-dialog-scrim-backdrop-filter: "blur(2px)"
+  # HA 2026.x Material Web 3 md-dialog variables (cascade into MD3 components)
+  md-dialog-container-color: "var(--j-surface-raised)"
+  md-sys-color-surface: "var(--j-surface-raised)"
+  md-sys-color-surface-container-high: "var(--j-surface-raised)"
 
   # Status / state
   state-icon-color: "var(--j-cyan)"
@@ -143,10 +150,10 @@ jarvis:
       position: fixed;
       inset: 0;
       pointer-events: none;
-      z-index: 0;
+      z-index: -1;
       background: radial-gradient(circle at 50% 32%,
-        rgba(63, 199, 255, 0.08) 0%,
-        rgba(63, 199, 255, 0.03) 30%,
+        var(--j-glow-soft) 0%,
+        var(--j-glow-soft) 30%,
         transparent 62%);
       animation: jReactorBreath 8s ease-in-out infinite;
       will-change: opacity;
@@ -283,13 +290,13 @@ jarvis:
 
     /* Hover */
     paper-icon-item:hover {
-      background: rgba(63, 199, 255, 0.08);
+      background: var(--j-fill-weak);
       color: var(--j-text);
     }
 
     /* Selected — cyan left accent + subtle fill (cyan only) */
     a[aria-selected="true"] paper-icon-item {
-      background: rgba(63, 199, 255, 0.12);
+      background: var(--j-fill);
       color: var(--j-text);
       box-shadow: inset 3px 0 0 0 var(--j-cyan);
     }
@@ -304,9 +311,13 @@ jarvis:
 
   card-mod-more-info: |
     /* Dialog surface — SOLID and framed (re-asserts the popup fix) */
-    ha-dialog {
+    /* Covers legacy mwc dialogs AND HA 2026.x Material Web 3 md-dialog */
+    ha-dialog,
+    ha-md-dialog,
+    md-dialog {
       --dialog-surface-background: var(--j-surface-raised);
       --mdc-dialog-scrim-color: var(--j-scrim);
+      --md-dialog-container-color: var(--j-surface-raised);
     }
     .mdc-dialog__surface,
     ha-dialog .content {
@@ -334,4 +345,11 @@ jarvis:
       font-family: var(--j-font);
       color: var(--j-cyan);
       letter-spacing: 1px;
+    }
+
+    /* MD3 part-based surface override (belt-and-suspenders for HA 2026.x) */
+    ha-md-dialog::part(surface),
+    md-dialog::part(surface) {
+      background: var(--j-surface-raised) !important;
+      border: 1px solid var(--j-line);
     }

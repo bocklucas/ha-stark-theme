@@ -26,6 +26,9 @@ j-surface-raised: "#131D31"
 j-line: "rgba(63, 199, 255, 0.28)"
 j-line-strong: "rgba(63, 199, 255, 0.55)"
 j-glow: "rgba(63, 199, 255, 0.45)"
+j-glow-soft: "rgba(63, 199, 255, 0.05)"
+j-fill-weak: "rgba(63, 199, 255, 0.08)"
+j-fill: "rgba(63, 199, 255, 0.12)"
 j-scrim: "rgba(2, 6, 12, 0.72)"
 j-text: "#EAF4FF"
 j-text-dim: "#9FB6C8"
@@ -64,6 +67,9 @@ error-color: "var(--j-red)"
 | `j-line` | `rgba(63,199,255,0.28)` | Hairline card and sidebar borders |
 | `j-line-strong` | `rgba(63,199,255,0.55)` | Reticle corner brackets on hover/active |
 | `j-glow` | `rgba(63,199,255,0.45)` | Drop-shadow glow on icons and active cards |
+| `j-glow-soft` | `rgba(63,199,255,0.05)` | Ambient arc-reactor glow mid stop |
+| `j-fill-weak` | `rgba(63,199,255,0.08)` | Sidebar hover fill |
+| `j-fill` | `rgba(63,199,255,0.12)` | Sidebar selected fill |
 | `j-scrim` | `rgba(2,6,12,0.72)` | Backdrop behind dialogs |
 | `j-text` | `#EAF4FF` | Primary text |
 | `j-text-dim` | `#9FB6C8` | Secondary/dim text, sidebar inactive items |
@@ -139,7 +145,12 @@ The transparency bug in HA dialogs is addressed by setting these variables both 
 | `ha-dialog-scrim-color` | `var(--j-scrim)` | Dimmed backdrop behind the dialog |
 | `mdc-dialog-scrim-color` | `var(--j-scrim)` | MDC-level scrim binding |
 | `ha-dialog-surface-position` | `fixed` | Prevents compositing bleed |
-| `dialog-backdrop-filter` | `blur(2px)` | Subtle blur on the scrim |
+| `ha-dialog-scrim-backdrop-filter` | `blur(2px)` | Subtle blur on the scrim (corrected from `dialog-backdrop-filter`) |
+| `md-dialog-container-color` | `var(--j-surface-raised)` | MD3 dialog surface color (HA 2026.x `md-dialog`) |
+| `md-sys-color-surface` | `var(--j-surface-raised)` | MD3 system surface token |
+| `md-sys-color-surface-container-high` | `var(--j-surface-raised)` | MD3 elevated surface container token |
+
+The fix covers both legacy mwc/MDC dialogs (`.mdc-dialog__surface`) and HA 2026.x Material Web 3 `md-dialog`/`ha-md-dialog` components. The MD3 path uses both global CSS custom properties (`md-dialog-container-color`, `md-sys-color-surface*`) and a `::part(surface)` rule in `card-mod-more-info`.
 
 ---
 
