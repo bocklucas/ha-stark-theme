@@ -175,3 +175,84 @@ jarvis:
         transition-duration: 0.01ms !important;
       }
     }
+
+  card-mod-card: |
+    /* Card base — SOLID surface, solid design (popup-bug discipline) */
+    ha-card {
+      position: relative;
+      border-radius: 12px;
+      border: 1px solid var(--j-line);
+      background: var(--j-surface);
+      color: var(--j-text);
+      font-family: var(--j-font);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+      overflow: hidden;
+    }
+
+    /* Reticle corner brackets (top-right + bottom-left) */
+    ha-card::before,
+    ha-card::after {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      pointer-events: none;
+      opacity: 0.6;
+      transition: opacity 0.25s ease, border-color 0.25s ease;
+    }
+    ha-card::before {
+      top: 8px; right: 8px;
+      border-top: 1.5px solid var(--j-line-strong);
+      border-right: 1.5px solid var(--j-line-strong);
+    }
+    ha-card::after {
+      bottom: 8px; left: 8px;
+      border-bottom: 1.5px solid var(--j-line-strong);
+      border-left: 1.5px solid var(--j-line-strong);
+    }
+
+    /* Hover — contained glow + lift */
+    ha-card:hover {
+      border-color: var(--j-cyan);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5), 0 0 18px var(--j-glow);
+      transform: translateY(-1px);
+    }
+    ha-card:hover::before,
+    ha-card:hover::after { opacity: 1; border-color: var(--j-cyan); }
+
+    /* Active state — when an entity is on, its icon ramps to bright cyan + glow */
+    ha-card .state-on ha-icon,
+    ha-card [data-domain] ha-state-icon[data-state="on"],
+    ha-card ha-icon[data-state="on"] {
+      color: var(--j-cyan-bright);
+      filter: drop-shadow(0 0 5px var(--j-glow));
+    }
+
+    /* Numeric readouts in monospace (sensor/climate values) */
+    ha-card .value,
+    ha-card .state,
+    ha-card .secondary .value {
+      font-family: var(--j-font-mono);
+      letter-spacing: 0.5px;
+    }
+
+    /* Buttons */
+    mwc-button, ha-button {
+      --mdc-typography-button-font-family: var(--j-font);
+      --mdc-theme-primary: var(--j-cyan);
+      border-radius: 6px;
+    }
+
+    /* Switches inside cards */
+    ha-switch {
+      --switch-checked-color: var(--j-cyan);
+      --switch-checked-button-color: var(--j-cyan-bright);
+    }
+
+    /* Inputs inside cards */
+    ha-textfield, ha-select {
+      --mdc-text-field-fill-color: var(--j-surface);
+      --mdc-text-field-ink-color: var(--j-text);
+      --mdc-text-field-label-ink-color: var(--j-text-dim);
+    }
