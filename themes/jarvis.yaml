@@ -256,3 +256,48 @@ jarvis:
       --mdc-text-field-ink-color: var(--j-text);
       --mdc-text-field-label-ink-color: var(--j-text-dim);
     }
+
+  card-mod-sidebar: |
+    /* Sidebar shell */
+    :host {
+      --sidebar-background-color: var(--j-void);
+      border-right: 1px solid var(--j-line);
+    }
+
+    /* Brand title */
+    .menu .title {
+      color: var(--j-cyan);
+      font-family: var(--j-font);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* Nav items — calm at rest */
+    paper-icon-item {
+      border-radius: 8px;
+      margin: 3px 8px;
+      color: var(--j-text-dim);
+      transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    /* Hover */
+    paper-icon-item:hover {
+      background: rgba(63, 199, 255, 0.08);
+      color: var(--j-text);
+    }
+
+    /* Selected — cyan left accent + subtle fill (cyan only) */
+    a[aria-selected="true"] paper-icon-item {
+      background: rgba(63, 199, 255, 0.12);
+      color: var(--j-text);
+      box-shadow: inset 3px 0 0 0 var(--j-cyan);
+    }
+    a[aria-selected="true"] paper-icon-item ha-icon {
+      color: var(--j-cyan-bright);
+      filter: drop-shadow(0 0 5px var(--j-glow));
+    }
+
+    /* Header icons */
+    .menu ha-icon-button { color: var(--j-text-dim); }
+    .menu ha-icon-button:hover { color: var(--j-cyan); }
