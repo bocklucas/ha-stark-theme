@@ -1,7 +1,7 @@
 ---
 
 yaml-files:
-  - "themes/stark.yaml"
+  - "themes/jarvis.yaml"
 
 rules:
   braces:
