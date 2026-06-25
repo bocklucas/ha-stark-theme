@@ -125,3 +125,52 @@ jarvis:
 
   # card-mod activation
   card-mod-theme: jarvis
+
+  card-mod-root: |
+    @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    /* Page base */
+    body {
+      font-family: var(--j-font);
+      color: var(--j-text);
+      background: var(--j-void);
+    }
+
+    /* Single faint ambient arc-reactor glow — the only resting animation */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(circle at 50% 32%,
+        rgba(63, 199, 255, 0.08) 0%,
+        rgba(63, 199, 255, 0.03) 30%,
+        transparent 62%);
+      animation: jReactorBreath 8s ease-in-out infinite;
+      will-change: opacity;
+    }
+
+    @keyframes jReactorBreath {
+      0%, 100% { opacity: 0.55; }
+      50%      { opacity: 1; }
+    }
+
+    /* Scrollbars */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: var(--j-void); }
+    ::-webkit-scrollbar-thumb {
+      background: var(--j-cyan-deep);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover { background: var(--j-cyan); }
+
+    /* Accessibility: kill all motion when requested */
+    @media (prefers-reduced-motion: reduce) {
+      body::before { animation: none !important; }
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
