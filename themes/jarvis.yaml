@@ -176,6 +176,30 @@ jarvis:
   ha-font-family-body: "var(--j-font)"
   ha-font-family-heading: "var(--j-font)"
 
+  # ============================================================
+  # DARK-MODE DECLARATION — the systemic contrast fix.
+  # Declaring ONLY a dark mode forces HA to apply the default DARK base
+  # theme beneath our overrides, so every surface we do NOT explicitly
+  # set (Settings pages, newly-migrated components, etc.) inherits a DARK
+  # default instead of the light base. Without this, a top-level theme is
+  # rendered on the LIGHT base -> light-on-light, unreadable text.
+  # ============================================================
+  modes:
+    dark:
+      primary-background-color: "var(--j-void)"
+      secondary-background-color: "var(--j-surface)"
+      card-background-color: "var(--j-surface)"
+      ha-card-background: "var(--j-surface)"
+      primary-text-color: "var(--j-text)"
+      secondary-text-color: "var(--j-text-dim)"
+      divider-color: "var(--j-line)"
+      app-header-background-color: "var(--j-void)"
+      sidebar-background-color: "var(--j-void)"
+      md-sys-color-surface: "var(--j-surface-raised)"
+      md-sys-color-on-surface: "var(--j-text)"
+      ha-color-surface-default: "var(--j-surface)"
+      ha-color-surface-low: "var(--j-void)"
+
   # card-mod activation
   card-mod-theme: jarvis
 
