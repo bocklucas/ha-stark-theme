@@ -1,208 +1,91 @@
-# Iron Man MCU HUD Theme for Home Assistant
+# JARVIS
 
-[![Build Status](https://github.com/CashWilliams/ha-stark-theme/workflows/.github/workflows/workflow.yml/badge.svg)](https://github.com/CashWilliams/ha-stark-theme/actions)
-
-> [!WARNING]
-> This theme is meant to be used on a wall display and hasn't been fully
-> tested or optimized to work in all screens of Home Assistant.
-
-**Enhanced Iron Man MCU HUD Theme** - Transform your Home Assistant into Tony Stark's workshop with authentic Marvel Cinematic Universe colors and effects inspired by the actual film designs.
-
-## ✨ New Features & Enhancements
-
-### 🎨 Authentic MCU Color Palette
-- **Arc Reactor Blue** (`#67C7EB`) - Primary HUD elements matching the films
-- **Targeting Orange** (`#FF6600`) - Warning and targeting indicators
-- **Stark Gold** (`#FBCA03`) - Accent colors and highlights
-- **Alert Red** (`#F44336`) - Critical alerts and status indicators
-- **Deep Space Dark** (`#0A0E1A`) - Background matching the suit's interior
-
-### 🔋 Visual Effects
-- **Arc Reactor Indicators** - Pulsing blue corner elements on cards
-- **HUD Scan Lines** - Animated scanning effects across interface elements
-- **Targeting Reticles** - Corner brackets on menu items inspired by Iron Man's targeting system
-- **Subtle Grid Overlay** - Faint HUD grid pattern across the interface
-- **Enhanced Glow Effects** - Multi-layered glow and shadow effects
-- **Smooth Animations** - Cubic-bezier transitions for a premium feel
-
-### ⚡ JARVIS-Style Iconography
-- **Navigation Icons** - Gold-glowing header icons with enhanced readability on dark background
-- **Sidebar Targeting** - Active menu items get animated targeting brackets with pulse effect
-- **State-Aware Icons** - Smart coloring: lights=gold, power=blue, alerts=orange, errors=red
-- **HUD Glow Effects** - All icons have contextual drop-shadow glows matching their function
-- **Interactive Feedback** - Hover animations with subtle scale transforms and color shifts
-- **Notification Pulse** - Alert icons have gentle pulsing animations for attention
-- **Enhanced Switches** - Arc reactor styled toggles with appropriate glow effects
-
-### 💎 Enhanced Components
-- **Gradient Backgrounds** - Multi-layer gradients with transparency effects
-- **Enhanced Typography** - Technical font stack with improved spacing
-- **Interactive Feedback** - Hover effects with transform and glow enhancements
-- **Backdrop Blur** - Modern glass-morphism effects on cards
-
-## 🎯 Design Philosophy
-
-This theme is based on the authentic Iron Man HUD design from the Marvel Cinematic Universe, specifically inspired by the work of **Jayse Hansen** who designed the actual HUD interfaces for the Iron Man films. The color palette and visual effects aim to recreate the immersive experience of Tony Stark's workshop and suit interface.
-
-## 📦 Installation
-
-Add the following code to your `configuration.yaml` file (reboot required).
-
-```yaml
-frontend:
-  ... # your configuration.
-  themes: !include_dir_merge_named themes
-  ... # your configuration.
-```
-
-### Manual Installation
-
-Clone this repository in your existing (or create it) `themes/` folder.
-
-```bash
-cd themes/
-git clone https://github.com/CashWilliams/ha-stark-theme.git
-```
-
-### HACS Installation
-
-1. Open HACS in your Home Assistant
-2. Go to Frontend
-3. Search for "Stark Theme"
-4. Install and restart Home Assistant
-
-## 🎮 Activation
-
-You can choose between two variants:
-- Stark (original MCU palette): select `stark`
-- Jarvis Blue HUD (no reds, blue-spectrum only): select `jarvis`
-
-1. Go to your profile in Home Assistant
-2. Choose your desired theme from the theme dropdown
-3. Enjoy your new Stark Industries interface!
-
-## 🖼️ Background Customization
-
-The theme includes multiple background options to suit your preference:
-
-### **Option 1: Custom Arc Reactor Effect (Default)**
-A CSS-generated arc reactor glow effect that's lightweight and perfectly matched to the theme.
-
-### **Option 2-7: High-Quality Iron Man Backgrounds**
-Several pre-configured high-quality Iron Man backgrounds are available. To use one:
-
-1. Open `themes/stark.yaml`
-2. Comment out the current background line by adding `#` at the beginning
-3. Uncomment your preferred option by removing the `#`
-
-### **Using Your Own Background**
-To use your own Iron Man background image:
-
-1. **Upload your image** to `/config/www/images/` (create the folder if it doesn't exist)
-2. **Edit the theme** by changing the background line to:
-   ```yaml
-   background-image: "center / cover no-repeat fixed url('/local/images/your-image-name.jpg')"
-   ```
-
-### **Recommended Background Sources**
-- **WallpaperCave** - High-quality Iron Man wallpapers
-- **DeviantArt** - Arc reactor blueprints and technical designs
-- **Unsplash** - Professional tech and industrial photos
-- **Marvel Official** - Official movie stills and promotional images
-
-### **Background Tips**
-- Use **dark backgrounds** for best contrast with the HUD elements
-- **4K resolution** (3840x2160) works best for large displays
-- **Arc reactor themes** complement the blue color scheme perfectly
-- **Workshop/lab settings** create an immersive Stark Industries feel
-
-## 🛠️ Custom Icon Set (MDI Alternative)
-
-To use a blue-themed Jarvis icon set as an alternative to MDI icons (as discussed in the HA community thread), follow these steps:
-
-1. Download the provided starter icon pack file from this repo: `icons/jarvis-icons.js`.
-2. Copy it to your Home Assistant config directory as `/config/www/jarvis-icons.js`.
-3. In Home Assistant, go to Settings → Dashboards → Three dots (top-right) → Resources → Add Resource:
-   - URL: `/local/jarvis-icons.js`
-   - Resource type: `Module`
-4. Refresh your browser cache (Ctrl+F5) or reload Lovelace.
-5. Use Jarvis icons anywhere you can specify an icon, e.g. in entity cards:
-   ```yaml
-   icon: jarvis:home
-   icon: jarvis:power
-   icon: jarvis:lightbulb
-   icon: jarvis:settings
-   icon: jarvis:lock
-   icon: jarvis:alert
-   icon: jarvis:error
-   icon: jarvis:fan
-   icon: jarvis:thermometer
-   icon: jarvis:automation
-   ```
-
-Optional auto-alias (replace mdi: with jarvis: automatically):
-1. Copy `icons/jarvis-icon-alias.js` to `/config/www/jarvis-icon-alias.js`.
-2. Add it as a resource AFTER `jarvis-icons.js`:
-   - URL: `/local/jarvis-icon-alias.js`
-   - Resource type: `Module`
-3. Extend the `mappedNames` set in `jarvis-icon-alias.js` to cover the mdi names you want auto-mapped.
-
-Notes:
-- The icon file registers an `ha-iconset-svg` named `jarvis`. Replace any `<g id="...">` SVG content with icons from the community thread or your own SVGs. Keep the `id` values the same to preserve names.
-- You can maintain both MDI and Jarvis packs. Use `mdi:<name>` or `jarvis:<name>` interchangeably.
-- Forum discussion: see [Alternative to MDI icons](https://community.home-assistant.io/t/alternative-to-mdi-icons/78133) on the Home Assistant community.
-
-## 🛠️ Technical Details
-
-### Color Variables
-- **Primary HUD Colors**: Arc reactor blue spectrum for main interface elements
-- **Warning System**: Orange/amber colors for system alerts and targeting
-- **Status Indicators**: Red spectrum for critical alerts and errors
-- **Background System**: Deep space colors creating the perfect contrast
-- **Metallic Accents**: Grey tones representing the suit's metal construction
-
-### Animation System
-- **Arc Reactor Pulse**: 2-second breathing animation on card indicators
-- **Scan Lines**: 3-second continuous scanning effect
-- **Glow Pulse**: 3-second breathing glow on sidebar title
-- **Hover Transforms**: Smooth scale and translation effects
-
-## 🎨 Customization
-
-The theme uses CSS custom properties, making it easy to customize colors:
-
-```yaml
-# Example: Customize the arc reactor color
-stark:
-  arc-reactor-blue: "#YOUR_COLOR_HERE"
-```
-
-## 📱 Compatibility
-
-- ✅ Desktop browsers
-- ✅ Mobile devices
-- ✅ Tablet displays
-- ⚠️ Wall displays (primary target - may need adjustments for other screens)
-
-## 🤖 Credits
-
-- **Original Theme**: Based on The Cyberpunk 2077 Theme by @flejz
-- **Enhanced by**: @CashWilliams
-- **MCU HUD Design Inspiration**: Jayse Hansen (Original Iron Man HUD Designer)
-- **Color Research**: Based on authentic Marvel Cinematic Universe color palettes
-
-## 🚀 Future Enhancements
-
-- [x] **JARVIS-Style Iconography** - ✅ COMPLETED: Enhanced icon styling with glow effects and animations
-- [x] **Enhanced Navigation Readability** - ✅ COMPLETED: Improved navigation bar with better contrast
-- [ ] Additional suit Mark variations (Mark 42, Mark 50, etc.)
-- [ ] FRIDAY voice assistant integration styling
-- [ ] Holographic projection effects
-- [ ] Enhanced mobile responsiveness
-- [ ] Custom Iron Man sound effects integration
+JARVIS — an Iron Man HUD-inspired dark theme for Home Assistant.
 
 ---
 
-*"Sometimes you gotta run before you can walk."* - Tony Stark
+## Requirements
 
-Transform your smart home into Stark Industries today! 🔧⚡
+- Home Assistant 2026.x or later
+- [card-mod](https://github.com/thomasloven/lovelace-card-mod) installed via HACS — **required**. The theme uses card-mod blocks to inject fonts, card chrome, sidebar chrome, and dialog styling. The theme will not render correctly without it.
+
+---
+
+## Install via HACS
+
+1. Open HACS in Home Assistant and go to **Frontend**.
+2. Click the three-dot menu in the top right and choose **Custom repositories**.
+3. Add this repository URL and set the category to **Theme**.
+4. Find "JARVIS" in the list and click **Download**.
+5. Add the following to your `configuration.yaml` if it is not already there:
+   ```yaml
+   frontend:
+     themes: !include_dir_merge_named themes
+   ```
+6. Restart Home Assistant.
+7. Go to your profile (bottom-left avatar) and select **JARVIS** from the theme dropdown.
+
+---
+
+## Install Manually
+
+1. Copy `themes/jarvis.yaml` to `<config>/themes/jarvis.yaml` (create the `themes/` directory if it does not exist).
+2. Add the following to your `configuration.yaml` if it is not already there:
+   ```yaml
+   frontend:
+     themes: !include_dir_merge_named themes
+   ```
+3. Restart Home Assistant.
+4. Go to your profile (bottom-left avatar) and select **JARVIS** from the theme dropdown.
+
+---
+
+## Design Notes
+
+JARVIS follows an "Instrument" philosophy: the interface is calm and dark at rest, activating precisely when something demands attention.
+
+- **Calm at rest.** Cards sit on a solid `#0D1422` surface with faint cyan hairline borders. A single slow arc-reactor glow breathes in the background — no scan lines, no animated grids, nothing that competes with your data.
+- **Hover.** Cards lift slightly and their border intensifies to the full cyan (`#3FC7FF`). Reticle corner brackets (top-right and bottom-left) brighten.
+- **Active (entity on).** Entity icons light up to bright cyan (`#8FE6FF`) with a contained drop-shadow glow, making it instantly clear what is on vs. off.
+- **Alert.** Warnings use gold (`#FFC107`); errors and criticals use red (`#FF4B3E`). These colors appear only when they mean something.
+- **Sidebar.** The selected nav item gets a solid cyan left-accent bar and an icon glow. Nothing else in the sidebar competes.
+- **Popups are solid and readable.** Dialogs render on a raised solid surface (`#131D31`) rather than a semi-transparent one, eliminating the bleed-through transparency bug present in many HA themes. A dimmed scrim sits behind them.
+
+Fonts: **Chakra Petch** for all UI text; **JetBrains Mono** for numeric readouts (sensor values, climate temperatures). Both are loaded from Google Fonts at runtime.
+
+---
+
+## Customizing with `j-*` Tokens
+
+The theme is built on a two-layer token system. **Layer 1** is a set of `j-*` design tokens at the top of `themes/jarvis.yaml` — these are the only place raw color values live. **Layer 2** maps those tokens to every Home Assistant CSS variable.
+
+To retune the whole theme, edit the `j-*` values in Layer 1 and restart. Nothing else needs to change.
+
+Key tokens:
+
+| Token | Default | Purpose |
+|---|---|---|
+| `j-cyan` | `#3FC7FF` | Primary arc-reactor cyan |
+| `j-cyan-bright` | `#8FE6FF` | Active/hover highlights |
+| `j-cyan-deep` | `#1B6E94` | Muted cyan, scrollbar thumb |
+| `j-gold` | `#FFC107` | Warnings and alerts |
+| `j-red` | `#FF4B3E` | Errors and critical states |
+| `j-green` | `#3DE08C` | Success / on-confirmed |
+| `j-inactive` | `#5C6B78` | Disabled / off states |
+| `j-void` | `#06090F` | Page and chrome background |
+| `j-surface` | `#0D1422` | Card surfaces (solid) |
+| `j-surface-raised` | `#131D31` | Dialog/popup surfaces (solid) |
+| `j-text` | `#EAF4FF` | Primary text |
+| `j-text-dim` | `#9FB6C8` | Secondary / dim text |
+| `j-font` | Chakra Petch stack | UI typeface |
+| `j-font-mono` | JetBrains Mono stack | Numbers / readouts |
+
+---
+
+## Roadmap
+
+**Optional `jarvis:` icon set (future phase).** A separate opt-in resource will provide a `jarvis:` icon prefix using the `window.customIconsets` API. It will be shipped as an optional Lovelace resource — not bundled with the theme file — so it does not affect users who prefer MDI icons. This is not available yet.
+
+---
+
+*"Sometimes you gotta run before you can walk."* — Tony Stark
