@@ -123,6 +123,51 @@ jarvis:
   mdc-theme-on-surface: "var(--j-text)"
   mdc-theme-on-primary: "var(--j-void)"
 
+  # ---- Contrast hardening: overlays, tooltips, menus, tables ----
+  # The theme forces text/icons light+cyan, but several overlay surfaces were
+  # left at framework defaults (which are LIGHT) -> unreadable light-on-light.
+  # These give every overlay a dark surface with light text.
+  # Tooltips (covers every HA tooltip generation)
+  ha-tooltip-background-color: "var(--j-surface-raised)"
+  ha-tooltip-color: "var(--j-text)"
+  sl-tooltip-background-color: "var(--j-surface-raised)"
+  sl-tooltip-color: "var(--j-text)"
+  simple-tooltip-background: "var(--j-surface-raised)"
+  simple-tooltip-text-color: "var(--j-text)"
+  paper-tooltip-background: "var(--j-surface-raised)"
+  paper-tooltip-color: "var(--j-text)"
+  paper-tooltip-opacity: "1"
+  # Material / Vaadin overlays (selects, pickers, combo-box, menus)
+  material-background-color: "var(--j-surface-raised)"
+  material-secondary-background-color: "var(--j-surface)"
+  material-body-text-color: "var(--j-text)"
+  material-secondary-text-color: "var(--j-text-dim)"
+  material-disabled-text-color: "var(--j-inactive)"
+  mdc-theme-text-primary-on-background: "var(--j-text)"
+  mdc-theme-text-secondary-on-background: "var(--j-text-dim)"
+  mdc-theme-text-hint-on-background: "var(--j-text-dim)"
+  mdc-theme-text-disabled-on-background: "var(--j-inactive)"
+  mdc-theme-text-icon-on-background: "var(--j-text-dim)"
+  mdc-ripple-color: "var(--j-cyan)"
+  # MD3 (HA 2026.x) surface containers + on-surface text
+  md-sys-color-surface-container: "var(--j-surface-raised)"
+  md-sys-color-surface-container-low: "var(--j-surface)"
+  md-sys-color-surface-container-lowest: "var(--j-void)"
+  md-sys-color-surface-container-highest: "var(--j-surface-raised)"
+  md-sys-color-on-surface: "var(--j-text)"
+  md-sys-color-on-surface-variant: "var(--j-text-dim)"
+  md-sys-color-primary: "var(--j-cyan)"
+  md-sys-color-on-primary: "var(--j-void)"
+  # Toasts / snackbars
+  mdc-snackbar-fill-color: "var(--j-surface-raised)"
+  mdc-snackbar-label-ink-color: "var(--j-text)"
+  # Data tables
+  data-table-background-color: "var(--j-surface)"
+  table-row-background-color: "var(--j-surface)"
+  table-row-alternative-background-color: "var(--j-surface-raised)"
+  # Code editor
+  code-editor-background-color: "var(--j-surface)"
+
   # Typography binding
   paper-font-common-base_-_font-family: "var(--j-font)"
   paper-font-body1_-_font-family: "var(--j-font)"
@@ -172,6 +217,29 @@ jarvis:
       border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover { background: var(--j-cyan); }
+
+    /* Tooltips — force dark surface + light text (were unstyled = white bg) */
+    ha-tooltip::part(body),
+    ha-tooltip::part(base),
+    .tooltip,
+    paper-tooltip,
+    simple-tooltip {
+      background: var(--j-surface-raised) !important;
+      color: var(--j-text) !important;
+      border: 1px solid var(--j-line);
+      --sl-tooltip-background-color: var(--j-surface-raised);
+      --sl-tooltip-color: var(--j-text);
+    }
+
+    /* Menu / list item hover — dark cyan tint, never a light highlight */
+    mwc-list-item:hover,
+    ha-list-item:hover,
+    ha-md-menu-item:hover,
+    .mdc-list-item:hover,
+    paper-item:hover {
+      background: var(--j-fill-weak) !important;
+      color: var(--j-text) !important;
+    }
 
     /* Accessibility: kill all motion when requested */
     @media (prefers-reduced-motion: reduce) {
